@@ -9,4 +9,11 @@ Rails.application.routes.draw do
 
   end
   devise_for :users, :controllers => {:registrations => "registrations"}
+  resources :posts do
+    collection do
+      get 'hobby'
+      get 'study'
+      get 'team'
+    end
+  end
 end
