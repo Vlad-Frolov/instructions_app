@@ -8,6 +8,7 @@
         <div class="posted-by">Posted by <%= post.user.name %></div>
         <h3><%= post.title %></h3> 
         <p><%= post.content %></p>
+        <img src='https://orcada-voyages.com/wp-content/uploads/2016/04/visite-guidee.jpg' alt="альтернативный текст">
         <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
       </div>
     </div>
