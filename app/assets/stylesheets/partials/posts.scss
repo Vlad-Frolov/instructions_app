@@ -6,6 +6,11 @@
     padding: 10px;
     text-align: left;
     transition: border 0.1s, background 0.5s;
+    .card-block img{
+      max-width: 140px;
+      max-height: 140px;
+
+    }
     .post-text {
       overflow: hidden;
     }
