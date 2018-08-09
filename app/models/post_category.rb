@@ -1,0 +1,3 @@
+class PostCategory < ApplicationRecord
+   
+end

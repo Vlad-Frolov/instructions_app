@@ -1,0 +1,2 @@
+class PostsCategoriesController < ApplicationController
+end
