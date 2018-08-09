@@ -2,16 +2,11 @@
   <div class="card">
     <div class="card-block">
       <img src='https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/242ce817-97a3-48fe-9acd-b1bf97930b01/09-posterization-opt.jpg'>
+      
       <h4 class="post-text">
         <%= truncate(post.title, :length => 22) %>
       </h4>
-      <div class="post-content">
-        <div class="posted-by">Posted by <%= post.user.name %></div>
-        <h3><%= post.title %></h3> 
-        <p><%= post.content %></p>
-        
-        <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
-      </div>
+      <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
     </div>
   </div><!-- card -->
 </div><!-- col-sm-3 -->

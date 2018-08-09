@@ -1,6 +1,6 @@
 .single-post-card {
-    min-height: 135px;
-    max-height: 135px;
+    height: 165px;
+    // max-height: 135px;
     box-shadow: 1px 1px 4px rgba(0,0,0, 0.3);
     color: black;
     padding: 10px;
@@ -25,6 +25,6 @@
       border-radius: 1%;
     }
   }
-  .post-content {
-    display: none;
-  }
+  // .post-content {
+  //   display: none;
+  // }
