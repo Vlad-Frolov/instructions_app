@@ -1,16 +1,23 @@
 class PostsController < ApplicationController
+
     def show
         @post = Post.find(params[:id])
     end
-    def categories
-        @categories = Category.all
-        @posts = get_posts.paginate(page: params[:page])
-    end
-    def get_posts
-        Post.limit(30)
-    end
+        
+    def crafts
+        posts_for_branch(params[:action])
+      end
+    
+      def get_posts(params)
+        @posts = Post.where(id: params)
+      end
+      
+      private
 
-    private
+      def posts_for_branch(name)
+        @cat = Category.where(name: name)
+        @posts = @cat.posts.limit
+    end
 
 
     
