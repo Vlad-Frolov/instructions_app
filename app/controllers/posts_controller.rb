@@ -5,15 +5,15 @@ class PostsController < ApplicationController
         
     def index
       @posts = get_posts.paginate(page: params[:page])
-      @categories = Category.where(name: @name)
+      @categories = Category.all
     end
 
     def get_posts
-      Post.limit(30)
+      Post.limit(20)
     end
 
     def new
-      @categories = Category.where(name: @name)
+      @categories = Category.all
       @post = Post.new
     end
 

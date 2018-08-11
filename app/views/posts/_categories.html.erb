@@ -1,10 +1,11 @@
+
 <div class="col-sm-12">
   <ul class="categories-list">
-    <%= render all_categories_button_partial_path %>
-    <% @categories.each do |category| %>
+    <%= render all_categories_button_partial_path, posts_path: posts_path %>
+     <% @categories.each do |category| %>
       <li class="category-item">
         <%= link_to category.name, 
-                    send(category: category.name), 
+
                     :class => ("selected-item" if params[:category] == category.name) %>
       </li>
     <% end %>

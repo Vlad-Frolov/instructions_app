@@ -8,15 +8,8 @@ module PostsHelper
         end
     end
     
-    def all_categories_button_partial_path
-      if params[:category].blank?
-        'posts/branch/categories/all_selected'
-      else
-        'posts/branch/categories/all_not_selected'
-      end
-    end
     
-    def no_posts_partial_path(posts)
+    def no_posts_partial_path
       @posts.empty? ? 'shared/no_posts' : 'shared/empty_partial'
     end
     
