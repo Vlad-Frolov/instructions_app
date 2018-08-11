@@ -1,9 +1,12 @@
 <div id="branch-main-content" class="container">
   <div class="row">
     <h1 class="page-title">Categories</h1>
-    <%= render 'posts/new/create_new_post' %>
+    <%= render 'posts/create_new_post' %>
   </div><!-- row -->
-
+  <div class="row">
+  <%= render  'posts/search_form' %>
+  </div><!-- row -->
+  
   <div class="row">
     <%= render 'posts/categories' %>
   </div>
@@ -11,7 +14,7 @@
   <div class="row">
     <div class="col-sm-12" id="feed">
       <%= render @posts %>
-   
+      <%= render no_posts_path %>
     </div>
   </div><!-- row -->	
 

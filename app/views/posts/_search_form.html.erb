@@ -1,0 +1,11 @@
+<div class="col-sm-12">
+  <%= form_tag(send("posts_path"), 
+               :method => "get", 
+               id: "search-form") do %>
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <%= text_field_tag  :search, 
+                        params[:search], 
+                        class: "form-control" %>
+    <%= render category_field_partial_path %>
+  <% end %>
+</div><!-- col-sm-12 -->

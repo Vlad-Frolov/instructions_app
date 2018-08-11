@@ -6,7 +6,6 @@
                     required: true, 
                     minlength: 5,
                     maxlength: 100 %>
-  <%= f.hidden_field :branch, :value => @branch %>
   <%= f.text_area :content, 
                   rows: 6,
                   required: true, 
@@ -14,6 +13,9 @@
                   maxlength: 1000,
                   placeholder: 'Describe what you are looking for. E.g. specific interests, expertise level, etc.', 
                   class: 'form-control' %>
+   <%= f.text_area :img_url,
+                   rows: 1,
+                   class: 'form-control' %>
   <%= f.collection_select :category_id, @categories, :id, :name, class: 'form-control' %>
   <%= f.submit "Create a post", class: 'form-control' %>
 <% end %>

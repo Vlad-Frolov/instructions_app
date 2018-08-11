@@ -9,11 +9,11 @@ module PostsHelper
     end
     
     
-    def no_posts_partial_path
-      @posts.empty? ? 'shared/no_posts' : 'shared/empty_partial'
+    def no_posts_path()
+      @posts.empty? ? 'posts/shared/no_posts' : 'posts/shared/empty_partial'
     end
     
-    def all_categories_button_partial_path
+    def all_categories_button_path
       if params[:category].blank?
         'posts/categories/all_selected'
       else
@@ -26,6 +26,14 @@ module PostsHelper
         'posts/posts_pagination_page/update_pagination'
       else
         'posts/posts_pagination_page/remove_pagination'
+      end
+    end
+
+    def category_field_partial_path
+      if params[:category].present?
+        'posts/search_form/category_field'
+      else
+        'posts/shared/empty_partial'
       end
     end
     
