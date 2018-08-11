@@ -1,5 +1,21 @@
-<div class="posts_index_main">
-  <div class="container-fluid">
-    <%= render 'post' %>
+<div id="branch-main-content" class="container">
+  <div class="row">
+    <h1 class="page-title">Categories</h1>
+    <%= render 'posts/new/create_new_post' %>
+  </div><!-- row -->
+
+  <div class="row">
+    <%= render 'posts/categories' %>
   </div>
-</div>
+
+  <div class="row">
+    <div class="col-sm-12" id="feed">
+      <%= render @posts %>
+      
+    </div>
+  </div><!-- row -->	
+
+  <div class="infinite-scroll">
+    <%= will_paginate @posts %>
+  </div>
+</div><!-- container -->
