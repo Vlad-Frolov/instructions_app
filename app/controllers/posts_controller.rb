@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: :index
-    
-    skip_authorize_resource :only => :new
-    before_action :redirect_if_not_signed_in, only: [:new]
+  # before_action :authenticate_user!, except: [:index, :show]
+  # skip_authorize_resource :only => :new
+  # before_action :redirect_if_not_signed_in, only: [:new]
+
     def show
-        @post = Post.find(params[:id])
         @steps = @post.steps.paginate(:per_page => 1, :page => params[:page])
         respond_to do |format|
           format.html # index.html.erb
@@ -21,16 +20,22 @@ class PostsController < ApplicationController
         format.html
         format.js { render partial: 'posts/posts_pagination_page' }
       end
+      authorize! :index, Post
     end
 
     def edit
+  
       @step = Step.new
       @steps = @post.steps.order("position")
+      authorize! :update, @post
     end
 
     def destroy
+      authorize! :destroy, @post
       @post = Post.find(params[:id]).destroy
-      redirect_to posts_path
+      if @post.destroy
+        redirect_to posts_path, success:  "#{t(".success_destroy")}"
+      end
     end 
 
     def get_posts
@@ -51,12 +56,15 @@ class PostsController < ApplicationController
     end
 
     def new
-      @categories = Category.all
-      @post = Post.new
+        @categories = Category.all
+        @post = Post.new
+        authorize! :create, @post
     end
 
     def create
+      
       @post = Post.new(post_params)
+      authorize! :create, @post
       if @post.save 
         redirect_to post_path(@post) 
       else
@@ -65,6 +73,7 @@ class PostsController < ApplicationController
     end
 
     def update
+      authorize! :update, @post
       respond_to do |format|
         if @post.update(post_params)
           format.html { redirect_to edit_post_path(@post.id), notice: 'Post was successfully updated.' }

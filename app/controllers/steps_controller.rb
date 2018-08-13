@@ -1,7 +1,7 @@
 class StepsController < ApplicationController
 
     def edit
-        secureEnter @step
+        
     end
 
     def sort
