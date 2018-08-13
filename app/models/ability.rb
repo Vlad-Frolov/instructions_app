@@ -11,16 +11,12 @@ class Ability
     if user.role == "user"
       can [:index,:show], [Post,Category]
       can [:create], Post
-      can :index, User
-      can :edit, User
+      # can :index, User
+      # can :edit, User
       can :update, User do |u|
         u == user
       end
-      can :index, Post
-      can :update, Post do |post|
-        post.user == user
-      end
-      can :destroy, Post do |post|
+      can [:update, :destroy], Post do |post|
         post.user == user
       end
     end
@@ -29,9 +25,9 @@ class Ability
       can :index, Post
       can :show, Post
       can :show, Category
-      can :index, User
-      can :edit, User
-      cannot :create, Post
+      # can :index, User
+      # can :edit, User
+      # cannot :create, Post
     end
 
 

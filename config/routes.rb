@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   end
   devise_for :users, :controllers => {:registrations => "registrations"}
-  resources :posts
-
+  resources :posts do
+    resources :steps, :only => [:create, :update, :edit, :destroy, :clear]
+  end
+  post 'update_step', to: 'steps#update_step', as: 'update_step'
+  resources :steps do
+    put :sort, on: :collection
+  end
 end
