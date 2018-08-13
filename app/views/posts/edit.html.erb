@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row post_edit_block">
+    <div class="col-lg-4 edit_post_column">
+      <div class="comments_image"><%= t('posts.edit.header') %></div>
+      <%= form_for(@post) do |f| %>
+        <div class="input-group">
+          <span class="input-group-addon"><%= t('posts.edit.title') %></span>
+          <%= f.text_field :title, :class => "form-control" %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><%= t('posts.edit.content') %></span>
+          <%= f.text_area :content, :class => "form-control" %>
+        </div>
+        <button type="submit" class="btn btn-facebook edit_post_button"><%= t('posts.edit.update') %></button>
+      <% end %>
+      <div class="comments_image"><%= t('posts.edit.form.create') %></div>
+      <%= form_for [@post] do |f| %>
+        <div class="field" style = "display:none">
+          <%= f.label :post_id %>
+          <%= f.number_field :post_id, :value => @post.id %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><%= t('posts.edit.form.step') %></span>
+          <%= f.text_field :title, :class => "form-control" %>
+        </div>
+        
+        <button type="submit" class="btn btn-success posts_edit_form_button"><%= t('posts.edit.form.button') %></button>
+      <% end %>
+      <div class="posts_edit_button_group">
+        <%= link_to t('posts.edit.form.links.switch'), post_path(@post.id) %>
+        <button onclick="updateDiv()" class="btn btn-secondary"><%= t('posts.edit.buttons.refresh') %></button>
+      </div>
+    </div>
+    <div class="col-lg-8" id="reloading">
+      <div>
+        <table class="table table-striped posts_index_table" style="margin-top:0">
+          <thead>
+            <tr>
+              <th class="comments_image">#</th>
+              <th class="comments_image"><%= t('posts.edit.table.step') %></th>
+              <th class="comments_image"><%= t('posts.edit.table.update') %></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

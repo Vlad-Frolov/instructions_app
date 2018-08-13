@@ -5,6 +5,11 @@
     #side-menu {
       display: none !important;
     }
+    .single-post-list {
+      min-height: 65px;
+      max-height: 65px;
+      padding: 10px 0;
+    }
   }
   @media only screen and (min-width:767px) and (max-width: 1000px) {
     .container {
@@ -32,10 +37,3 @@
     }
   }
   
-  @media screen and (max-width: 767px) {
-    .single-post-list {
-      min-height: 65px;
-      max-height: 65px;
-      padding: 10px 0;
-    }
-  }

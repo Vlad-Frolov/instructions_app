@@ -1,6 +1,17 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: :index
+    
+    skip_authorize_resource :only => :new
+    before_action :redirect_if_not_signed_in, only: [:new]
     def show
         @post = Post.find(params[:id])
+        @steps = @post.steps.paginate(:per_page => 1, :page => params[:page])
+        respond_to do |format|
+          format.html # index.html.erb
+          format.json { render json: @steps }
+          format.js
+        end
     end
         
     def index
@@ -11,6 +22,16 @@ class PostsController < ApplicationController
         format.js { render partial: 'posts/posts_pagination_page' }
       end
     end
+
+    def edit
+      @step = Step.new
+      @steps = @post.steps.order("position")
+    end
+
+    def destroy
+      @post = Post.find(params[:id]).destroy
+      redirect_to posts_path
+    end 
 
     def get_posts
       
@@ -41,6 +62,24 @@ class PostsController < ApplicationController
       else
         redirect_to root_path
       end
+    end
+
+    def update
+      respond_to do |format|
+        if @post.update(post_params)
+          format.html { redirect_to edit_post_path(@post.id), notice: 'Post was successfully updated.' }
+          format.json { render :show, status: :ok, location: @post }
+        else
+          format.html { render :edit }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+    private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_post
+      @post = Post.find(params[:id])
     end
 
     def post_params
