@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+    include SearchCop
     belongs_to :user
     belongs_to :category
     validates :title, presence: true, length: { minimum: 5, maximum: 255 }
@@ -12,4 +13,5 @@ class Post < ApplicationRecord
     scope :search, -> (search) do
         where("title ILIKE lower(?) OR content ILIKE lower(?)", "%#{search}%", "%#{search}%")
     end
+    
 end
