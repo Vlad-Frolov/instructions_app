@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     get 'signup', to: 'devise/registrations#new'
-    
   end
+  get 'tags/:tag', to: 'posts#index', as: :tag
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   # devise_for :users, :controllers => {:registrations => "registrations"}
   resources :posts do

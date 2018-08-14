@@ -6,8 +6,9 @@ class Post < ApplicationRecord
     validates :content, presence: true, length: { minimum: 20 }
     validates :category_id, presence: true
     has_many :steps
-    has_many :taggings
-    has_many :tags, through: :taggings
+    acts_as_ordered_taggable
+    
+    
     default_scope -> { includes(:user).order(created_at: :desc) }
     scope :by_category, -> (category_name) do 
         joins(:category).where(categories: {name: category_name}) 

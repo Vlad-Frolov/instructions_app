@@ -42,8 +42,12 @@ class PostsController < ApplicationController
       
       search = params[:search]
       category = params[:category]
-
-      if category.blank? && search.blank?
+      tag = params[:tag]
+      
+      if tag.present?
+        @posts = Post.tagged_with(params[:tag]).includes(:category)
+        return @posts
+      elsif category.blank? && search.blank?
         posts = Post.all
       elsif category.blank? && search.present?
         posts = Post.search(search)
@@ -92,7 +96,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:content, :title, :img_url, :category_id)
+      params.require(:post).permit(:content, :title, :img_url, :category_id, :tag_list)
                            .merge(user_id: current_user.id)
     end
 end
