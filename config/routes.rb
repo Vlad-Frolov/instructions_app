@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :steps do
     put :sort, on: :collection
   end
+  
 end
