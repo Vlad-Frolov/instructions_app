@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable,
-         :omniauth_providers => [:facebook, :google_oauth2, :vkontakte]
+         :omniauth_providers => [:facebook, :google_oauth2, :vkontakte, :github]
   has_many :posts #, dependent: :destroy
 
   def self.google_from_omniauth(auth)
@@ -51,7 +51,7 @@ class User < ApplicationRecord
       user.name = auth.info.name
       user.password = Devise.friendly_token[0,20]
       # user.oauth_token = auth.credentials.token
-      user.save!
+      user.save
     end
   end
   
