@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     end
 
     def edit
-  
+      @categories = Category.all
       @step = Step.new
       @steps = @post.steps.order("position")
       authorize! :update, @post

@@ -15,7 +15,7 @@
   </div>
     <div class="col-lg-12 tagcloud">
     <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
-      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <%= link_to tag.name, tag_path(tag.name), class: 'css_class label label-success' %>
     <% end %>
     </div>
   <div class="row">
@@ -31,12 +31,19 @@
   </div>
 </div><!-- container -->
 
-<script>
-  $(document).ready(function(){
-    var classes = ["label label-primary","label label-success","label label-info","label label-warning","label label-default","label label-default","label label-danger"];
+<%# <script>
+  $(function(){
+    // var classes = ["label label-primary","label label-success","label ","label label-warning","label label-default","label label-default","label label-danger"];
 
-    $(".tagcloud a").each(function(){
-        $(this).addClass(classes[~~(Math.random()*classes.length)]);
+    $(".tagcloud>a").each(function(){
+      $(this).toggleClass('label-warning');
     });
+    $(".tagcloud a").onclick(function(){
+      let a =($(this).attr('id'));
+      // if($(this).attr('id')==)
+      $(this).toggleClass('label-success');
+      $(this).toggleClass('label-warning');
+    });
+    
 });
-</script>
+</script> %>

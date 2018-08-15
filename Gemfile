@@ -17,6 +17,9 @@ gem "omniauth-github", '1.1.1'
 gem 'omniauth-facebook'
 gem 'search_cop'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
+gem 'cloudinary'
+
+
 # gem 'rails-jquery-autocomplete'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'

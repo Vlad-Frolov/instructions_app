@@ -9,8 +9,12 @@
         </div>
         <div class="input-group">
           <span class="input-group-addon"><%= t('posts.edit.content') %></span>
-          <%= f.text_area :content, :class => "form-control" %>
+          <%= f.text_area :content,
+                   rows: 10,
+                   class: 'form-control' %>
         </div>
+        <%= f.collection_select :category_id, @categories, :id, :name, class: 'form-control' %>
+        <%= f.text_field :tag_list, :class => "form-control", placeholder: "Add some tags through comma" %>
         <button type="submit" class="btn btn-facebook edit_post_button"><%= t('posts.edit.update') %></button>
       <% end %>
       <div class="comments_image"><%= t('posts.edit.form.create') %></div>
