@@ -17,3 +17,5 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require cloudinary
+//= require posts/tag_cloud
+//= require step_edit

@@ -1,0 +1,18 @@
+development:
+  cloud_name: druq4napx
+  api_key: '828254239748185'
+  api_secret: rvA8rdfEBgpT0TvQw7ELCXwyiPQ
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: druq4napx
+  api_key: '828254239748185'
+  api_secret: rvA8rdfEBgpT0TvQw7ELCXwyiPQ
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: druq4napx
+  api_key: '828254239748185'
+  api_secret: rvA8rdfEBgpT0TvQw7ELCXwyiPQ
+  enhance_image_tag: true
+  static_image_support: false

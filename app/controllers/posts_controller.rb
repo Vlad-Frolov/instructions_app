@@ -19,8 +19,9 @@ class PostsController < ApplicationController
       respond_to do |format|
         format.html
         format.js { render partial: 'posts/posts_pagination_page' }
-      end
+      end      
       authorize! :index, Post
+
     end
 
     def edit
@@ -48,13 +49,13 @@ class PostsController < ApplicationController
         @posts = Post.tagged_with(params[:tag]).includes(:category)
         return @posts
       elsif category.blank? && search.blank?
-        posts = Post.all
+        @posts = Post.all
       elsif category.blank? && search.present?
-        posts = Post.search(search)
+        @posts = Post.search(search)
       elsif category.present? && search.blank?
-        posts = Post.by_category(category)
+        @posts = Post.by_category(category)
       elsif category.present? && search.present?
-        posts = Post.by_category(category).search(search)
+        @posts = Post.by_category(category).search(search)
       else
       end
     end
