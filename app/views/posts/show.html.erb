@@ -8,7 +8,7 @@
       <% end %>
       <h3><%= @post.title %></h3>
       <p><%= image_tag @post.img_url %>
-      <p><%= @post.content %></p>
+      <%= markdown(@post.content) %>
       <div id="steps_list_show">
         <%= render 'steps' %>
       </div>

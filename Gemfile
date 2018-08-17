@@ -18,6 +18,7 @@ gem 'omniauth-facebook'
 gem 'search_cop'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 gem 'cloudinary'
+gem 'redcarpet'
 
 
 # gem 'rails-jquery-autocomplete'
