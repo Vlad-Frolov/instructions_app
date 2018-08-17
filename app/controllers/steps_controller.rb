@@ -1,8 +1,8 @@
 class StepsController < ApplicationController
-    before_action :set_step, only: [:edit, :destroy, :update_step]
+    before_action :set_step, only: [:edit, :destroy]
     respond_to :js, :json, :html
     def edit
-        
+     
     end
 
     def create
@@ -31,10 +31,18 @@ class StepsController < ApplicationController
       end
 
     
-  def update_step
-    @step.content = params[:data_value]
-    @step.save
+  def update
+    @step = Step.find(params[:id])
+    respond_to do |format|
+    if @step.update(step_params)
+      format.html { redirect_to edit_post_path(@step.post_id), notice: 'Step was successfully updated.' }
+      format.json { render :show, status: :ok, location: @step }
+    else
+      format.html { render :edit }
+      format.json { render json: @step.errors, status: :unprocessable_entity }
+    end
   end
+end
 
     def sort
         params[:order].each do |key,value|
@@ -49,7 +57,7 @@ class StepsController < ApplicationController
     end
 
     def step_params
-        params.require(:step).permit(:post_id, :name )
+        params.require(:step).permit(:post_id, :name, :content, :img_url )
     end
 
 end
