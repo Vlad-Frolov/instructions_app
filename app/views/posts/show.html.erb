@@ -12,6 +12,16 @@
       <div id="steps_list_show">
         <%= render 'steps' %>
       </div>
+      <h3>Comments</h3>
+      <%= form_for [@post, Comment.new] do |f| %>
+        <%= f.text_area :text %>
+        <%= f.submit 'Add comment' %>
+      <% end %>
+      <div id="comments">
+        <% @post.comments.each do |c| %>
+          <p><%= c.text %></p>
+        <% end %>
+      </div>
     </div>
   </div><!-- row -->
 </div>
