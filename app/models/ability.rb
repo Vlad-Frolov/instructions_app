@@ -13,6 +13,7 @@ class Ability
       can [:create], Post
       # can :index, User
       # can :edit, User
+      can :create, Comment
       can :update, User do |u|
         u == user
       end
