@@ -5,7 +5,9 @@ class PostsController < ApplicationController
   # before_action :redirect_if_not_signed_in, only: [:new]
 
     def show
+      
         @steps = @post.steps.paginate(:per_page => 1, :page => params[:page])
+        @comments = @post.comments.includes(:user)
         respond_to do |format|
           format.html # index.html.erb
           format.json { render json: @steps }
