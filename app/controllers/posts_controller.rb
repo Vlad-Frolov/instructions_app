@@ -44,12 +44,14 @@ class PostsController < ApplicationController
     def get_posts
       
       # # search = params[:search]
-      # category = params[:category]
-      # tag = params[:tag]
+      category = params[:category]
+      tag = params[:tag]
       if params[:val]
         @posts = Post.search(params[:val])
-      elsif params[:category]
-          @posts = Post.search(params[:category])
+      elsif tag.present?
+        @posts = Post.tagged_with(tag)
+      elsif category.present?
+        @posts = Post.by_category(category)
       else
         @posts = Post.all
       end
