@@ -9,6 +9,7 @@ class PostChannel < ApplicationCable::Channel
 
   def speak(data)
     Comment.create! text: data['comment'], user_id: data['user'], post_id: data['post']
+    authorize! :create, Comment
   end
 
   private

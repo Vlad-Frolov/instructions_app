@@ -20,6 +20,7 @@ class Ability
       can [:update, :destroy], Post do |post|
         post.user == user
       end
+      can :create, Comment
     end
 
     if user.role == nil

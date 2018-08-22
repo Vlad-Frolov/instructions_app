@@ -1,0 +1,114 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" ; integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+<link rel="stylesheet" href="/wp-content/themes/MyTheme/bootstrap/css/bootstrap.min.css" type="text/css" media="screen, projection" />
+
+
+ <div class="container" id="users">   
+ 
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">            
+            <%= link_to '', { action: :destroy}, method: :delete, remote: true, :class => 'btn btn-lg btn-dark fas fa-trash', type: 'submit', id:'trash' %>
+            <%= link_to '',  { action: :unblock}, method: :post, remote: true, :class => 'btn btn-lg btn-dark fas fa-user', type: 'submit', id:'unlock' %>
+            <%= link_to '', { action: :block}, method: :post, remote: true, :class => 'btn btn-lg btn-dark fas fa-lock', type: 'submit', id:'lock' %>
+            <%= link_to '', { action: :mkadmin}, method: :post, remote: true, :class => 'btn btn-lg btn-dark fas fa-chess-king', type: 'submit', id:'mkadmin' %>
+
+        </div>
+    </div>
+
+    <table class="table" style="border-width: 2px">
+        <tr>
+            <th>
+                <input type="checkbox" class="checkbox_user" id='checkBoxAll'>
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                <strong>Role</strong>
+            </th>
+
+        </tr>
+
+        <% @users.each do |user| %>
+            <tr>
+                <td>
+                    <%= check_box_tag "user_check[]", user.id, false, class: 'checkbox_user', id: 'checkbox_user' %></td>
+                </td>
+                <td>
+                    <%= user.name %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <%= user.role %>  
+                </td>
+
+            </tr>
+        <% end %>
+    </table>
+
+    <div id="showGoods"><b>Checked flags: <span style="color:green;" id="goodsLenght"></span></b></div>
+</form>
+
+
+
+<script type="text/javascript">
+     
+    $('.document').ready(function () {
+        $("#trash").attr("disabled", true);
+        $("#lock").attr("disabled", true);
+        $("#unlock").attr("disabled", true);
+        $("#mkadmin").attr("disabled", true);
+        ["#trash","#lock","#unlock","#mkadmin"].forEach((value) => {
+        let jqObj = $(value); 
+        let href = jqObj.attr('href'); 
+        jqObj.on('click', (event) => { 
+        let newHref = href + '?' 
+        $('.checkbox_user').each(function () { 
+        if ($(this).prop('checked') == true) { 
+        newHref += 'user_check%5B%5D=' + $(this).val() + '&' 
+        } 
+        }); 
+        jqObj.attr('href', newHref) 
+        }); 
+        })
+
+        $('#checkBoxAll').click(function () {
+            if ($(this).is(":checked"))
+                $('.checkbox_user').prop('checked', true);
+            else
+                $('.checkbox_user').prop('checked', false);
+        });
+
+
+        $('.checkbox_user').on('click', function () {
+            var count = $('#checkbox_user:checked').length;
+
+            $("#goodsLenght").text(count);
+            if (count == 0) {
+                $("#trash").attr("disabled", true);
+                $("#lock").attr("disabled", true);
+                $("#unlock").attr("disabled", true);
+                $("#mkadmin").attr("disabled",true);
+            }
+            else {
+                $("#trash").attr("disabled", false);
+                $("#lock").attr("disabled", false);
+                $("#unlock").attr("disabled", false);
+                $("#mkadmin").attr("disabled",false);
+            }
+
+
+        });
+
+
+        
+    });
+</script>

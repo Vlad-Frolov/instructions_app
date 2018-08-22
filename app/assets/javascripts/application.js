@@ -17,5 +17,6 @@
 //= require bootstrap-sprockets
 //= require cloudinary
 //= require posts/tag_cloud
+//= require steps/upload_img
 //= require step_edit
 //= require_tree .

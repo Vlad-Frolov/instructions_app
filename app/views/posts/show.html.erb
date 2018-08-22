@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <div class="posted-by">Posted by <%= @post.user.name %></div>
+       <%= link_to "Back", :back, class: "btn btn-warning" %>
       <% if can? :update, @post %>
         <%= link_to t('posts.show.links.edit'), edit_post_path(@post.id), class: "btn btn-success" %>
         <%= link_to t('posts.show.links.destroy'), post_path(@post.id), method: :delete, class: "btn btn-danger" %>
@@ -13,15 +14,15 @@
         <%= render 'steps' %>
       </div>
    
-    
+    <% if can? :create, Comment%>
     <div class="row" style="margin-top:2%">
       <div class="input-group">
         <span class="input-group-addon"><%= t('posts.show.comment') %></span>
         <input id="input_text" data-post-id=<%= @post.id %> data-user-id=<%= current_user.id %> type="text" data-behavior="post_speaker" class="form-control">
       </div>
     </div>
-   
-    <div id="comments" style="margin-top:1%">
+    <% end %>
+    <div id="comments" style="margin-top:10px">
       <%= render @comments %>
     </div>
   </div><!-- row -->
