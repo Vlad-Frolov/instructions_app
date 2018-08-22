@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'posts#index', as: :tag
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   resources :users, :only => [:show, :index, :update, :edit, :destroy]
-  resources :posts, :only => [:index, :show, :update, :edit, :destroy]
+  resources :posts, :only => [:index, :show, :update, :edit, :destroy, :new]
   resources :posts do
     resources :steps, :only => [:create, :update, :edit, :destroy, :clear]
   end
