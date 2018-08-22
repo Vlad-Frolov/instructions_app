@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     def show
       
         @steps = @post.steps.paginate(:per_page => 1, :page => params[:page])
-        @comments = @post.comments.includes(:user)
+        @comments = @post.comments.includes(:user).order(created_at: :desc)
         respond_to do |format|
           format.html # index.html.erb
           format.json { render json: @steps }
@@ -43,22 +43,17 @@ class PostsController < ApplicationController
 
     def get_posts
       
-      search = params[:search]
+      # # search = params[:search]
       category = params[:category]
       tag = params[:tag]
-      
-      if tag.present?
-        @posts = Post.tagged_with(params[:tag]).includes(:category)
-        return @posts
-      elsif category.blank? && search.blank?
-        @posts = Post.all
-      elsif category.blank? && search.present?
-        @posts = Post.search(search)
-      elsif category.present? && search.blank?
+      if params[:val]
+        @posts = Post.search(params[:val])
+      elsif tag.present?
+        @posts = Post.tagged_with(tag)
+      elsif category.present?
         @posts = Post.by_category(category)
-      elsif category.present? && search.present?
-        @posts = Post.by_category(category).search(search)
       else
+        @posts = Post.all
       end
     end
 

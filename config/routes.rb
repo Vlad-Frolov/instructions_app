@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'comments/create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#index'
   
@@ -10,7 +9,8 @@ Rails.application.routes.draw do
   end
   get 'tags/:tag', to: 'posts#index', as: :tag
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
-  # devise_for :users, :controllers => {:registrations => "registrations"}
+  resources :users, :only => [:show, :index, :update, :edit, :destroy]
+  resources :posts, :only => [:index, :show, :update, :edit, :destroy, :new]
   resources :posts do
     resources :steps, :only => [:create, :update, :edit, :destroy, :clear]
   end

@@ -1,0 +1,54 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" ; integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+            <div class="container">    
+                <div class="jumbotron">
+                  <div class="row">
+                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                          <img src="<%= @user.image%>" alt="stack photo" class="img">
+                      </div>
+                      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                          <div class="container" style="border-bottom:1px solid black">
+                            <h2><%=@user.name%></h2>
+                          </div>
+                            <hr>
+                          <ul class="container details">
+                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><%=@user.email%></p></li>
+                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span><%=@user.count_posts%></p></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <table class="table table-striped" style="text-align: center">
+
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">            
+            <%= link_to "", 
+              new_post_path, 
+              :class => "far fa-plus-square" %>
+            
+            
+        </div>
+    </div>
+
+  		<thead>
+	      <tr>
+	        <th class="comments_image">#</th>
+	        <th class="comments_image"><%= t('posts.table.title') %></th>
+	        <th class="comments_image"><%= t('posts.table.update') %></th>
+	      </tr>
+  	  </thead>
+  	  <tbody>
+  	    <% @user.posts.each_with_index do |post, index| %>
+      	  <tr onclick="window.location.href='<%= post_path(post.id) %>'">
+            <th scope="row" class="comments_image"><%= index + 1 %></th>
+    	    	<td><%= post.title %></td>
+    				<td><%= post.updated_at.strftime("%d.%m.%y, %H:%M") %></td>
+          </tr>
+	    	<% end %>
+  	  </tbody>
+	  </table>
+</div>
