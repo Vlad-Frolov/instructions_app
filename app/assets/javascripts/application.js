@@ -18,5 +18,8 @@
 //= require cloudinary
 //= require posts/tag_cloud
 //= require steps/upload_img
+//= require users/index
 //= require step_edit
+//= require jquery.raty
+//= require ratyrate
 //= require_tree .
