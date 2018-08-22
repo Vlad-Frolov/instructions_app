@@ -8,23 +8,25 @@
         <%= link_to t('posts.show.links.destroy'), post_path(@post.id), method: :delete, class: "btn btn-danger" %>
       <% end %>
       <h3><%= @post.title %></h3>
-       <% if current_user %>
+    <div class="col-lg-3 posts_show_header_buttons">
+   
         <%= rating_for @post, "original_score" %>
-      <% end %>
+    
+    </div>
       <p><%= image_tag @post.img_url %>
       <%= markdown(@post.content) %>
       <div id="steps_list_show">
         <%= render 'steps' %>
       </div>
    
-    <% if can? :create, Comment%>
+    
     <div class="row" style="margin-top:2%">
       <div class="input-group">
         <span class="input-group-addon"><%= t('posts.show.comment') %></span>
         <input id="input_text" data-post-id=<%= @post.id %> data-user-id=<%= current_user.id %> type="text" data-behavior="post_speaker" class="form-control">
       </div>
     </div>
-    <% end %>
+    
     <div id="comments" style="margin-top:10px">
       <%= render @comments %>
     </div>

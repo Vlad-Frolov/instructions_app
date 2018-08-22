@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :steps do
     put :sort, on: :collection
   end
-  
+  match '*path' => redirect('/'), via: :get
   mount ActionCable.server => '/cable'
 
 end
