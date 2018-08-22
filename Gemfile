@@ -20,6 +20,7 @@ gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-
 gem 'cloudinary'
 gem 'redcarpet'
 gem 'ratyrate'
+gem 'shopify_app'
 
 
 # gem 'rails-jquery-autocomplete'
