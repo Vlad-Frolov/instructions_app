@@ -5,9 +5,9 @@
   </a>
 
   <ul class="dropdown-menu" role="menu">
-    <img src=<%= current_user.image%> class="avatar_login dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
     <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to 'Profile', @user %></li>
   </ul>
 </li>
 
