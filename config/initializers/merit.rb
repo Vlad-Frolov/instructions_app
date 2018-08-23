@@ -21,9 +21,10 @@ end
 
 Merit::Badge.create!({
   id: 1,
-  name: 'Five Tasks'
-  # custom_fields: { img_url: '/images/badge.gif' }
-  })
+  name: 'Five Tasks',
+  description: "Voted for two bands",
+  custom_fields: {image: "five_posts.png"}
+})
   
 # Create application badges (uses https://github.com/norman/ambry)
 # badge_id = 0

@@ -22,7 +22,8 @@
                             <ul>
                               <%= @user.comments.count %>
                               <% current_user.badges.each do |badge| %>
-                                <li><%= badge.name %></li>
+                                <li><%= badge.name %>
+                                <%= image_tag (badge.custom_fields[:image]) %></li>
                               <% end %>
                             </ul>
                           </ul>
