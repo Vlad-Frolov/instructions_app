@@ -21,6 +21,7 @@ gem 'cloudinary'
 gem 'redcarpet'
 gem 'ratyrate'
 gem 'shopify_app'
+gem 'merit'
 
 
 # gem 'rails-jquery-autocomplete'
