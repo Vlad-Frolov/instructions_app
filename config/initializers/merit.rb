@@ -21,11 +21,36 @@ end
 
 Merit::Badge.create!({
   id: 1,
-  name: 'Five Tasks',
-  description: "Voted for two bands",
-  custom_fields: {image: "five_posts.png"}
+  name: 'Discoverer',
+  description: "Created the first instruction",
+  custom_fields: {image: "first_post.svg"}
 })
-  
+Merit::Badge.create!({
+  id: 2,
+  name: 'Volunteer',
+  description: "Created 5 instructions",
+  custom_fields: {image: "five_posts.svg"}
+})
+Merit::Badge.create!({
+  id: 3,
+  name: 'Speaker',
+  description: "Commented 10 times",
+  custom_fields: {image: "social.svg"}
+})
+Merit::Badge.create!({
+  id: 4,
+  name: 'Hommie',
+  description: "Signed in 10 times",
+  custom_fields: {image: "hommie.svg"}
+})
+Merit::Badge.create!({
+  id: 5,
+  name: 'Hommie',
+  description: "Got 5 stars",
+  custom_fields: {image: "guide.svg"}
+})
+
+
 # Create application badges (uses https://github.com/norman/ambry)
 # badge_id = 0
 # [{

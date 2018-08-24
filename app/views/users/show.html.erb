@@ -21,9 +21,9 @@
                             <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span><%=@user.count_posts%></p></li>
                             <ul>
                               <%= @user.comments.count %>
+                              
                               <% current_user.badges.each do |badge| %>
-                                <li><%= badge.name %>
-                                <%= image_tag (badge.custom_fields[:image]) %></li>
+                                <li><div class="bandge-img"><%= image_tag (badge.custom_fields[:image]) %></div><%= badge.name %></li>
                               <% end %>
                             </ul>
                           </ul>

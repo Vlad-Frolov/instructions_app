@@ -3,7 +3,7 @@
     <img src=<%= comment.user.image%> width="60" height="60" style="border-radius: 10px;">
   </div>
   <div class="col-lg-10">
-    <strong class = "comments_nickname"><%= comment.user.name%></strong><br>
+    <strong class = "comments_nickname"><%= link_to comment.user.name, user_url(comment.user) %></strong><br>
     <%= comment.text %>
   </div>
 </div>
