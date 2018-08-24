@@ -22,5 +22,4 @@
 //= require users/index
 //= require jquery.raty
 //= require ratyrate
-//= require steps/sortable
 //= require_tree .

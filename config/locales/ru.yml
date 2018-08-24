@@ -1,0 +1,11 @@
+ru:
+  header:
+    form:
+      placeholder: "Search"
+    links:
+      login: "Вход"
+      signup: "Регистрация"
+      posts: "Инструкции"
+      profile: "Профиль"
+      instruction: "Инструкции"
+

@@ -14,9 +14,9 @@ module Merit
 
     def initialize
 
-      # score 2, to: :post_creator, on: 'comments#create', category: 'comment_activity' do |comment|
-      #   comment.title.present?
-      # end
+      score 2, to: :post_creator, on: 'comments#create', category: 'comment_activity' do |comment|
+        comment.title.present?
+      end
       # score 10, :on => 'users#create' do |user|
       #   user.bio.present?
       # end

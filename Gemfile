@@ -22,6 +22,7 @@ gem 'redcarpet'
 gem 'ratyrate'
 gem 'shopify_app'
 gem 'merit'
+gem "russian"
 
 
 # gem 'rails-jquery-autocomplete'
