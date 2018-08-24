@@ -1,5 +1,5 @@
 class StepsController < ApplicationController
-    before_action :set_step, only: [:edit, :destroy]
+    before_action :set_step, only: [:edit, :destroy, :update]
     skip_before_action :verify_authenticity_token
     respond_to :js, :json, :html
     def edit
@@ -33,7 +33,6 @@ class StepsController < ApplicationController
 
     
   def update
-    @step = Step.find(params[:id])
     respond_to do |format|
     if @step.update(step_params)
       format.html { redirect_to edit_post_path(@step.post_id), notice: 'Step was successfully updated.' }
