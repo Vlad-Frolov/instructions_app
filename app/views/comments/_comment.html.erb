@@ -6,12 +6,12 @@
     <strong class = "comments_nickname"><%= link_to comment.user.name, user_url(comment.user) %></strong><br>
     <%= comment.text %>
   </div>
-    <%= link_to like_comment_path(comment), method: :put do %>
+    <%= link_to like_comment_path(comment), remote: true, method: :put do %>
       Upvote
     <%= comment.get_upvotes.size %>
   <% end %>
 
-  <%= link_to dislike_comment_path(comment), method: :put do %>
+  <%= link_to dislike_comment_path(comment),remote: true, method: :put do %>
     Downvote
   <%= comment.get_downvotes.size %>
     <% end %>
