@@ -28,5 +28,11 @@ Rails.application.routes.draw do
   
     match '*path' => redirect('/'), via: :get
     mount ActionCable.server => '/cable'
+    resources :comments do 
+      member do
+        put "like", to: "comments#upvote"
+        put "dislike", to: "comments#downvote"
+      end
+    end
   end
 end

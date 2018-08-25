@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     def show
       
         @steps = @post.steps.paginate(:per_page => 1, :page => params[:page])
-        @comments = @post.comments.includes(:user).order(created_at: :desc)
+        @comments = @post.comments.includes(:user)
         respond_to do |format|
           format.html # index.html.erb
           format.json { render json: @steps }
