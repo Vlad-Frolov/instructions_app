@@ -22,4 +22,5 @@
 //= require users/index
 //= require jquery.raty
 //= require ratyrate
+//= require trix
 //= require_tree .

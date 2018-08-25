@@ -18,11 +18,11 @@ gem 'omniauth-facebook'
 gem 'search_cop'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 gem 'cloudinary'
-gem 'redcarpet'
 gem 'ratyrate'
 gem 'shopify_app'
 gem 'merit'
 gem "russian"
+gem 'trix', git: 'https://github.com/bcoia/trix.git'
 
 
 # gem 'rails-jquery-autocomplete'

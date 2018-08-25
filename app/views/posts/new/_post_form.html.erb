@@ -6,13 +6,7 @@
                     required: true, 
                     minlength: 5,
                     maxlength: 100 %>
-  <%= f.text_area :content, 
-                  rows: 6,
-                  required: true, 
-                  minlength: 20,
-                  maxlength: 1000,
-                  placeholder: 'Describe your instruction', 
-                  class: 'form-control' %>
+  <%= f.trix_editor :content, class: 'editor' %>
    <%= f.hidden_field :img_url,
                    rows: 1,
                    class: 'form-control',
@@ -26,6 +20,5 @@
           </a>
   <%= f.submit "Create a post", class: 'form-control' %>
 <% end %>
-
 <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <script type="text/javascript" src="/assets/steps/upload_img"> </script>
