@@ -39,6 +39,8 @@ en:
       posts: "Instructions"
       profile: "Profile"
       instruction: "Instructions"
+    buttons:
+      search: 'Search'
 
 
   

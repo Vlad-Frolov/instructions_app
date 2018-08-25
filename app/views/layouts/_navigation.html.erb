@@ -10,12 +10,7 @@
       <!-- Elements collapses on smaller devices -->
       <div class="col-sm-5">
         <%= render 'layouts/navigation/collapsible_elements' %>
-        <td class="nav-item<%= " active" if I18n.locale == :en %>">
-        <%= link_to "En", { locale: :en }, class: 'nav-link' %>
-      </td>
-      <td class="nav-item<%= " active" if I18n.locale == :ru %>">
-        <%= link_to "Рус", { locale: :ru }, class: 'nav-link' %>
-      </td>
+      
       </div><!-- col-sm-5 -->
 
     </div><!-- row -->

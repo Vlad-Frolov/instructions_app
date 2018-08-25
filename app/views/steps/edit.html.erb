@@ -2,23 +2,23 @@
 <%= cloudinary_js_config %>
 <div class="container new-post">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-12" id="feed">
       <h1 align="center">Edit step</h1>
         <%= bootstrap_form_for(@step) do |f| %>
           <%= f.text_field  :name, 
                             maxlength: 100, 
-                            placeholder: 'Title', 
+                            placeholder: 'Step name', 
                             class: 'form-control',
                             required: true, 
                             minlength: 5,
                             maxlength: 100 %>
-          <%= f.text_area :content, 
+           <%= f.trix_editor :content,
                           rows: 6,
                           required: true, 
                           minlength: 20,
                           maxlength: 1000,
                           placeholder: 'Describe your step', 
-                          class: 'form-control' %>
+                          class: 'editor' %>
           <%= f.text_area :img_url,
                           rows: 1,
                           class: 'form-control',

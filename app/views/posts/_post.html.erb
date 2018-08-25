@@ -1,15 +1,15 @@
 <div class="col-sm-3 single-post-card" id=<%= post_path(post.id) %>>
   <div class="card" onclick="window.location.href='<%= post_path(post.id) %>'">
-      <h4 class="post-text">
+      
         <%= truncate(post.title, :length => 22) %>
-      </h4>
-      <div class="manual-img" style="height: 200px;"> 
-        <%= link_to image_tag post.img_url, class: 'img-responsive img_m', :alt => "MyLogo"  %>
+      
+      <div class="manual-img" style="height: 166px;"> 
+        <%= link_to image_tag post.img_url, class: 'post-img', :alt => "MyLogo"  %>
       </div>
 
        <div class="badge badge-pill badge-warning tags"><%= post.category.name %></div>
       <% if can? :update, post %> 
-        <%= link_to "Destroy", post_path(post.id), method: :delete, class: 'interested', remote: true %>
+        <%= link_to "Destroy", post_path(post.id), method: :delete, remote: true %>
       <% end %>     
   </div><!-- card -->
 </div><!-- col-sm-3 -->

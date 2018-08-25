@@ -8,4 +8,10 @@ ru:
       posts: "Инструкции"
       profile: "Профиль"
       instruction: "Инструкции"
+    buttons:
+      search: 'Поиск'
+  data:
+    step:
+      name: "Шаг"
+
 

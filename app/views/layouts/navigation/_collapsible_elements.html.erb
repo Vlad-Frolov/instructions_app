@@ -1,5 +1,15 @@
 <div class="collapse navbar-collapse navbar-right" id="navbar-collapsible-content">
   <ul class="nav navbar-nav ">
+       <li class="dropdown pc-menu link-nav">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item<%= " active" if I18n.locale == :en %>">
+              <%= link_to "En", { locale: :en }, class: 'nav-link' %>
+            </li>
+            <li class="nav-item<%= " active" if I18n.locale == :ru %>">
+              <%= link_to "Рус", { locale: :ru }, class: 'nav-link' %></li>
+            </li>
+          </ul>
     <%= render collapsible_links_partial_path %>
   </ul>
 </div><!-- navbar-collapse -->

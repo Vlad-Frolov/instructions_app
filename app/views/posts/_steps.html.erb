@@ -1,10 +1,9 @@
 <% @steps.each do |step| %>
-  <strong class="posts_show_step_header"><%= step.name %></strong>
+  <strong class="posts_show_step_header"><%= t('data.step.name')%> <%= step.name =%></strong>
       <div class='row show_block'>
-      <div class='col-lg-12'>
-        <%= step.content %>
-        <%= image_tag step.img_url %>
-      </div>
+    
+        <%= sanitize step.content %>
+        <div align='center'><%= image_tag step.img_url %></div>
     </div>
 
 <% end %>

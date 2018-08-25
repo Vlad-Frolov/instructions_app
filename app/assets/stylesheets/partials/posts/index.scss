@@ -103,9 +103,6 @@
     padding: 10px;
     text-align: left;
     transition: border 0.1s, background 0.5s;
-    .post-text {
-      overflow: hidden;
-    }
    
     a, a:active, a:hover {
       color: black;
@@ -118,11 +115,12 @@
     }
   }
 
-.img m{
-  display: block;
-  margin: 0 auto;
-  max-height: 200 px;
+.post-img {
+  max-height: 166px;
 }
+
+
+
 .fa-search {
   position:absolute; 
   bottom:14px; 

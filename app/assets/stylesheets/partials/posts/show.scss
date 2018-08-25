@@ -16,10 +16,20 @@
     }
   }
 .posts_show_step_header{
-	padding-left: 5%;
 	font-size: 20px;
 }
 
 .posts_show_header_buttons{
 	text-align: right;
+}
+.post_board{
+	border-bottom: 1px solid lightgray;
+}
+.content img {
+  max-width: 750px;
+
+}
+.posts_show_tags{
+	padding-top:1%;
+	padding-bottom: 1%;
 }

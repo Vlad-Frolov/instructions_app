@@ -12,7 +12,18 @@
   .steps_edit_add_new{
     font-size:20px;
   }
-  
+  .show_block{
+    min-width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    word-wrap:break-word;
+    font-size: 20px;
+    img {
+      max-width: 1000px;
+    }
+  }
   .steps_edit_icons{
     color: white;
   }
