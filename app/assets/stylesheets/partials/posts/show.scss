@@ -26,10 +26,17 @@
 	border-bottom: 1px solid lightgray;
 }
 .content img {
-  max-width: 750px;
-
+  max-height: 500px;
+  max-width: 700px;
 }
 .posts_show_tags{
 	padding-top:1%;
 	padding-bottom: 1%;
+}
+.card-post-img {
+  max-height: 500px;
+}
+.card-step-img {
+  max-height: 100%;
+  width: 100%;
 }

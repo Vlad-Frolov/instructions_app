@@ -1,7 +1,6 @@
 
 <div class="container">
     
-    <%= render 'pages/side_menu' %>
     <div class="col-lg-8 main_page_posts">
       <div class="main_page_posts_header"><strong><%= t('root.latest') %></strong></div>
         <table class="table table-striped user_edit_table">
@@ -22,5 +21,13 @@
           <% end %>
         </tbody>
       </table>
+    </div>
+    <div class="col-lg-4 main_page_tag_cloud">
+      <div class="align_class"><strong><%= t('root.tags') %></strong></div>
+      <div id='tag_cloud'>
+        <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: "btn btn-success tags tag_cloud_item" %>
+        <% end %>
+      </div>
     </div>
 </div><!-- container -->

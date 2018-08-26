@@ -2,8 +2,10 @@
   <strong class="posts_show_step_header"><%= t('data.step.name')%> <%= step.name =%></strong>
       <div class='row show_block'>
     
-        <%= sanitize step.content %>
-        <div align='center'><%= image_tag step.img_url %></div>
+      <%= sanitize step.content %>
+       <div class='show-post-img'>
+        <%= image_tag step.img_url, class: "img-responsive card-step-img" %>
+       </div>
     </div>
 
 <% end %>

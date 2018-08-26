@@ -41,6 +41,9 @@ en:
       instruction: "Instructions"
     buttons:
       search: 'Search'
-
+   data:
+    step:
+      name: "Step"
+ 
 
   

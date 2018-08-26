@@ -2,7 +2,8 @@
   <div class="row" id='feed'>
     <h2 class='page-title post_board'><%= @post.title %></h2>
     <div class="col-sm-8 col-sm-offset-1 post_board">
-      <div class='content'><%= image_tag @post.img_url %></div>
+     
+        <%= image_tag @post.img_url, class: "img-responsive card-post-img" %>
   
       <%=sanitize @post.content %>
             <div class="posts_show_tags">
