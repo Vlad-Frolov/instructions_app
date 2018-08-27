@@ -23,4 +23,5 @@
 //= require jquery.raty
 //= require ratyrate
 //= require trix
+//= require post
 //= require_tree .

@@ -1,0 +1,17 @@
+<% @users.each do |user| %>
+            <tr>
+                <td>
+                    <%= check_box_tag "user_check[]", user.id, false, class: 'checkbox_user', id: 'checkbox_user' %></td>
+                </td>
+                <td>
+                    <%= link_to user.name, user_path(user) %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <%= user.role %>  
+                </td>
+
+            </tr>
+        <% end %>

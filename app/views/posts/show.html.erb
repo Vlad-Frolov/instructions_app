@@ -26,17 +26,18 @@
       <div id="steps_list_show">
         <%= render 'steps' %>
       </div>
-    
+      <% if can? :show, @comments %>
       <div class="input-group">
         <span class="input-group-addon"><%= t('posts.show.comment') %></span>
         <input id="input_text" data-post-id=<%= @post.id %> data-user-id=<%= current_user.id %> type="text" data-behavior="post_speaker" class="form-control">
      
       </div>
-    
+
       <div id="comments" style="margin-top:10px">
         <%= render @comments %>
       </div>
     </div>
+    <% end %>
   </div><!-- row -->
 </div>
 

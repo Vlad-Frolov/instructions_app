@@ -1,5 +1,6 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
+
+    <h1 class="page-title">All users</h1>
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" ; integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
@@ -18,43 +19,24 @@
         </div>
     </div>
 
-    <table class="table" style="border-width: 2px">
-        <tr>
-            <th>
-                <input type="checkbox" class="checkbox_user" id='checkBoxAll'>
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                <strong>Role</strong>
-            </th>
-
-        </tr>
-
-        <% @users.each do |user| %>
-            <tr>
-                <td>
-                    <%= check_box_tag "user_check[]", user.id, false, class: 'checkbox_user', id: 'checkbox_user' %></td>
-                </td>
-                <td>
-                    <%= link_to user.name, user_path(user) %>
-                </td>
-                <td>
-                    <%= user.email %>
-                </td>
-                <td>
-                    <%= user.role %>  
-                </td>
-
-            </tr>
-        <% end %>
-    </table>
+    <%= render "info" %>
 
     <div id="showGoods"><b>Checked flags: <span style="color:green;" id="goodsLenght"></span></b></div>
 </form>
 
 <script type="text/javascript" src="/assets/users/index.js"></script>
+<script>
+    $(function(){
+  $("#mkadmin").on("submit", function(event){
+    $.ajax({
+      type: "POST",
+      url: "/users/mkadmin", 
+      data: $(this).serialize(),
+      success: function(response) {
+        //update the DOM
+      }
+    });
+    event.preventDefault();
+  });
+})
+</script>

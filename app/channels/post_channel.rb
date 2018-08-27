@@ -1,6 +1,7 @@
 class PostChannel < ApplicationCable::Channel
   def subscribed
     stream_from channel
+    authorize! :show, Comment
   end
 
   def unsubscribed
