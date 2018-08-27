@@ -7,7 +7,9 @@ class StepsController < ApplicationController
     end
 
     def create
+     
         @post = Post.find(params[:post_id])
+        authorize! :menage, @post
         @step = Step.new(:post=>@post)
         @step = Step.create(step_params)
         @step.content = ""
@@ -23,7 +25,7 @@ class StepsController < ApplicationController
       end
 
       def destroy
-        
+       authorize! :menage, Post
         @step.destroy
         respond_to do |format|
           format.html { redirect_to edit_post_path(@step.post.id) }
@@ -33,6 +35,7 @@ class StepsController < ApplicationController
 
     
   def update
+    authorize! :menage, Post
     respond_to do |format|
     if @step.update(step_params)
       format.html { redirect_to edit_post_path(@step.post_id), notice: 'Step was successfully updated.' }

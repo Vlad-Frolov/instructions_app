@@ -9,27 +9,18 @@ class Ability
       can :manage, :all
     end
     if user.role == "user"
-      can [:index,:show], [Post,Category]
       can [:create], Post
-      # can :index, User
-      # can :edit, User
-      # can :create, Comment
       can :update, User do |u|
         u == user
       end
-      can [:update, :destroy], Post do |post|
+      can [:menage], [Post,Step] do |post,step|
         post.user == user
       end
-      can :show, Comment
+      can :show, [User]
     end
 
     if user.role == nil
-      can :index, Post
-      can :show, Post
-      can :show, Category
-      # can :index, User
-      # can :edit, User
-      # cannot :create, Post
+      
     end
 
 
