@@ -3,7 +3,7 @@
     <h1 class="page-title">All users</h1>
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>
-<script src="index.js"></script>
+<script src="users/index.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" ; integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 <link rel="stylesheet" href="/wp-content/themes/MyTheme/bootstrap/css/bootstrap.min.css" type="text/css" media="screen, projection" />
 
@@ -34,7 +34,9 @@
                 <strong>Blocked</strong>
             </th>
         </tr>
-        <%= render 'users/info' %>
+        <tbody>
+        <%= render @users %>        
+    </tbody>
     </div>
     <div id="showGoods"><b>Checked flags: <span style="color:green;" id="goodsLenght"></span></b></div>
 </form>

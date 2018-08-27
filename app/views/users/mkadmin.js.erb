@@ -1,0 +1,4 @@
+
+   $("#mkadmin").click(function() {
+     $("<%= escape_javascript(render @users) %>").replace("#users_table");
+   })

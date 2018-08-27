@@ -66,9 +66,9 @@ class UsersController < ApplicationController
       authorize! :menage, User
       User.where(id: params[:user_check]).update_all(role: "admin")
       respond_to do |format|
-        format.html
-        format.js
-      end
-      redirect_to users_url
+        format.html {redirect_to users_url}
+        format.js {}
+    end
+      
   end
 end
