@@ -34,6 +34,7 @@ class UsersController < ApplicationController
         format.html 
         format.js 
       end
+      redirect_to users_url
 
     end
   
@@ -44,6 +45,7 @@ class UsersController < ApplicationController
         format.html 
         format.js 
       end
+      redirect_to users_url
 
     end
 
@@ -56,6 +58,7 @@ class UsersController < ApplicationController
         format.html 
         format.js 
       end
+      redirect_to users_url
 
     end
 
@@ -63,9 +66,9 @@ class UsersController < ApplicationController
       authorize! :menage, User
       User.where(id: params[:user_check]).update_all(role: "admin")
       respond_to do |format|
-        
-          format.html { redirect_to @users, notice: "Save process completed!" }
-          format.json { render json: @users, status: :created, location: @users }
+        format.html
+        format.js
       end
+      redirect_to users_url
   end
 end

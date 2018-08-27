@@ -1,4 +1,5 @@
-<% @users.each do |user| %>
+  <div class='info'>
+  <% @users.each do |user| %>
             <tr>
                 <td>
                     <%= check_box_tag "user_check[]", user.id, false, class: 'checkbox_user', id: 'checkbox_user' %></td>
@@ -15,3 +16,4 @@
 
             </tr>
         <% end %>
+      </div>

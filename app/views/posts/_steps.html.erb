@@ -3,10 +3,12 @@
       <div class='row show_block'>
     
       <%= sanitize step.content %>
+       <% if step.img_url.present? %>
        <div class='show-post-img'>
         <%= image_tag step.img_url, class: "img-responsive card-step-img" %>
        </div>
     </div>
+    <%end %>
 
 <% end %>
 

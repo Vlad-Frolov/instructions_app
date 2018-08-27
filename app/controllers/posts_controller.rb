@@ -55,14 +55,15 @@ class PostsController < ApplicationController
     end
 
     def new
-      authorize! :create, @post
+      
         @categories = Category.all
         @post = Post.new
+        authorize! :create, @post
         
     end
 
     def create
-      authorize! :create, @post
+     
       @post = Post.new(post_params)
       
       respond_to do |format|
@@ -74,6 +75,7 @@ class PostsController < ApplicationController
           format.json { render json: @post.errors, status: :unprocessable_entity }
         end
       end
+      authorize! :create, @post
     end
 
     def update
