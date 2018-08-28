@@ -12,11 +12,15 @@
         <%= link_to t('posts.show.links.destroy'), post_path(@post.id), method: :delete, class: "btn btn-danger" %>
       <% end %>
       <%= link_to 'Create PDF document', post_path(@post, :format => :pdf), class: 'btn btn-warning' %>
+      <div class="main_page_posts_header"><strong><%= t('root.Steps') %></strong></div>
+     <% @post.steps.each_with_index do |step, index| %>
+             <h5 class="show_step"><a href="<%=@post.id%>?page=<%=index+1%>" class="f-icon-color"><%= (index+1).to_s + ") " + step.name %></a></h5>  
+            <% end %>
       </div>
       
     <div class="col-sm-10 col-sm-offset-1">  
       <div id="steps_list_show">
-        <%= render 'steps' %>
+        <%= render 'steps_List_Show' %>
       </div>
       <% if current_user %>
       <div class="input-group">

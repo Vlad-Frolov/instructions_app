@@ -47,12 +47,6 @@ class StepsController < ApplicationController
   end
 end
 
-    def sort
-        params[:order].each do |key,value|
-          Step.find(value[:id]).update_attribute(:position,value[:position])
-        end
-      end
-
     private
 
     def set_step

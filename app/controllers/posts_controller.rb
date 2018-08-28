@@ -5,8 +5,9 @@ class PostsController < ApplicationController
   # before_action :redirect_if_not_signed_in, only: [:new]
 
   def show
-    @steps = @post.steps.paginate(:per_page => 1, :page => params[:page])
+    @post = Post.includes(:tags).find(params[:id])
     @comments = @post.comments.includes(:user)
+    @steps = @post.steps.order('id').paginate(:per_page => 1, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @steps }
@@ -33,7 +34,7 @@ class PostsController < ApplicationController
       authorize! :menage, @post
       @categories = Category.all
       @step = Step.new
-      @steps = @post.steps.order("position")
+      @steps = @post.steps.order("id")
     end
 
     def destroy
