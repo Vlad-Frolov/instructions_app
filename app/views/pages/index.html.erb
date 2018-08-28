@@ -33,25 +33,9 @@
   </a>
 </div>
     <div class="col-lg-8 main_page_posts">
-      <div class="main_page_posts_header"><strong><%= t('root.latest') %></strong></div>
-        <table class="table table-striped user_edit_table">
-          <thead>
-            <tr>
-              <th style="text-align: left">#</th>
-              <th style="text-align: left"><%= t('posts.table.title') %></th>
-              <th style="text-align: left"><%= t('posts.table.update') %></th>
-            </tr>
-          </thead>
-        <tbody>
-          <% @posts.each_with_index do |post, index| %>
-            <tr onclick="window.location.href='<%= post_path(post.id) %>'">
-              <th scope="row align_class"><%= index + 1 %></th>
-              <td><%= post.title %></td>
-              <td><%= post.updated_at.strftime("%d.%m.%y, %H:%M") %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <div class="main_page_posts_header"><strong><%= t('root.latest') %></strong></div>
+      <%= render 'posts_latest', :sort => "updated_at DESC" %>
+    <div class="main_page_posts_header"><strong><%= t('root.top_favorites') %></strong></div>      
     </div>
     <div class="col-lg-4 main_page_tag_cloud">
       <div class="align_class"><strong><%= t('root.tags') %></strong></div>
