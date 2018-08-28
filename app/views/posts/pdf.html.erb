@@ -5,13 +5,14 @@
  <div class="col-lg-4"></div>
   <div class="col-lg-4">
       <% @post.steps.each do |step| %>
+    <div>
   <strong class="posts_show_step_header"><%= t('data.step.name')%> <%= step.name =%></strong>
       <div class='row show_block'>
     
       <%= sanitize step.content %>
        
        <%= image_tag step.img_url, class: "img-responsive card-post-img" %>
-
+    </div>
 <% end %>
 </div>
   <div class="col-lg-4"></div>
