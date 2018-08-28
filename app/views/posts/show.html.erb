@@ -13,7 +13,7 @@
       <% end %>
       <%= link_to 'Create PDF document', post_path(@post, :format => :pdf), class: 'btn btn-warning' %>
       <div class="main_page_posts_header"><strong><%= t('root.Steps') %></strong></div>
-     <% @post.steps.each_with_index do |step, index| %>
+     <% @post.steps.order('id').each_with_index do |step, index| %>
              <h5 class="show_step"><a href="<%=@post.id%>?page=<%=index+1%>" class="f-icon-color"><%= (index+1).to_s + ") " + step.name %></a></h5>  
             <% end %>
       </div>
