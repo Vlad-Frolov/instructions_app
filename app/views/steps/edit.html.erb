@@ -4,6 +4,8 @@
   <div class="row">
     <div class="col-sm-12" id="feed">
       <h1 align="center">Edit step</h1>
+<%= link_to t('steps.edit.destroyButton'), post_step_path(@step.id), method: :delete, :class => "btn btn-danger"%>
+        
         <%= bootstrap_form_for(@step) do |f| %>
           <%= f.text_field  :name, 
                             maxlength: 100, 

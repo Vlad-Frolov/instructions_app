@@ -13,7 +13,7 @@ class Ability
       can :update, User do |u|
         u == user
       end
-      can [:menage], [Post,Step] do |post,step|
+      can :menage, [Post,Step] do |post,step|
         post.user == user
       end
       can :show, [User]
