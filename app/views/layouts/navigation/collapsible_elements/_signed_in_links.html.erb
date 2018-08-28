@@ -3,7 +3,7 @@
           <ul class="dropdown-menu">
             <li><%= link_to 'Edit Profile', edit_user_registration_path%></li>
             <% if can? :index, User%>
-              <li><%= link_to 'Menage users', users_path%></li>
+              <li><%= link_to 'Admin panel', '/admin'%></li>
             <% end %>
             <li class="divider"></li>
             <li><%= link_to t('header.links.profile'), current_user %></li>

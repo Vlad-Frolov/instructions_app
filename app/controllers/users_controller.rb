@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   respond_to :js, :json, :html
-  def index
-    @users = User.all
-    authorize! :menage, User
+  # def index
+  #     @users = User.all
+  #   authorize! :manage, User
     
     
-  end  
+  # end
   
   def show
     @user = User.find params[:id]
@@ -29,48 +29,48 @@ class UsersController < ApplicationController
   #   end
   # end
   
-    def block
-      authorize! :menage, User
-      User.where(id: params[:user_check]).update_all(role: "banned")
-      respond_to do |format|
-        format.html 
-        format.js 
-      end
-      redirect_to users_url
+  #   def block
+  #     authorize! :manage, User
+  #     User.where(id: params[:user_check]).update_all(role: "banned")
+  #     respond_to do |format|
+  #       format.html 
+  #       format.js 
+  #     end
+  #     redirect_to users_url
 
-    end
+  #   end
   
-    def unblock
-      authorize! :menage, User
-      User.where(id: params[:user_check]).update_all(role: "user")
-      respond_to do |format|
-        format.html 
-        format.js 
-      end
-      redirect_to users_url
+  #   def unblock
+  #     authorize! :manage, User
+  #     User.where(id: params[:user_check]).update_all(role: "user")
+  #     respond_to do |format|
+  #       format.html 
+  #       format.js 
+  #     end
+  #     redirect_to users_url
 
-    end
+  #   end
 
-    def destroy
-      authorize! :menage, User
-      if params[:user_check]
-        User.where(id: params[:user_check]).destroy_all
-      end 
-      respond_to do |format|
-        format.html 
-        format.js 
-      end
-      redirect_to users_url
+  #   def destroy
+  #     authorize! :manage, User
+  #     if params[:user_check]
+  #       User.where(id: params[:user_check]).destroy_all
+  #     end 
+  #     respond_to do |format|
+  #       format.html 
+  #       format.js 
+  #     end
+  #     redirect_to users_url
 
-    end
+  #   end
 
-    def mkadmin
-      User.where(id: params[:user_check]).update_all(role: "admin")
-      respond_to do |format|
-        format.html { render 'user' }
-        format.js { }
-    end
-    index
+  #   def mkadmin
+  #     User.where(id: params[:user_check]).update_all(role: "admin")
+  #     respond_to do |format|
+  #       format.html { render 'user' }
+  #       format.js { }
+  #   end
+  #   index
       
-  end
+  # end
 end

@@ -3,6 +3,7 @@ $('.document').ready(function () {
     $("#lock").attr("disabled", true);
     $("#unlock").attr("disabled", true);
     $("#mkadmin").attr("disabled", true);
+    
     ["#trash","#lock","#unlock","#mkadmin"].forEach((value) => {
     let jqObj = $(value); 
     let href = jqObj.attr('href'); 

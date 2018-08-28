@@ -7,7 +7,7 @@
         <%= rating_for @post, "original_score" %>
       <% end %>
        <%= link_to "Back", :back, class: "btn btn-warning" %>
-    <% if can? :menage, @post %>
+    <% if can? :manage, @post %>
         <%= link_to t('posts.show.links.edit'), edit_post_path(@post.id), class: "btn btn-success" %>
         <%= link_to t('posts.show.links.destroy'), post_path(@post.id), method: :delete, class: "btn btn-danger" %>
       <% end %>

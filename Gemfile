@@ -27,6 +27,7 @@ gem 'acts_as_votable'
 gem 'x-editable-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'rails_admin'
 
 
 # gem 'rails-jquery-autocomplete'

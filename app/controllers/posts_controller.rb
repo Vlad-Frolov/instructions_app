@@ -32,14 +32,14 @@ class PostsController < ApplicationController
     end
 
     def edit
-      authorize! :menage, @post
+      authorize! :manage, @post
       @categories = Category.all
       @step = Step.new
       @steps = @post.steps.order("id")
     end
 
     def destroy
-      authorize! :menage, @post
+      authorize! :manage, @post
       @post = Post.find(params[:id]).destroy
       if @post.destroy
         redirect_to posts_path, success:  "#{t(".success_destroy")}"
@@ -87,7 +87,7 @@ class PostsController < ApplicationController
     end
 
     def update
-      authorize! :menage, @post
+      authorize! :manage, @post
       respond_to do |format|
         if @post.update(post_params)
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
