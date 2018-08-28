@@ -1,0 +1,12 @@
+<h2 class='page-title post_board'><%= @post.title %></h2>
+    <div class="col-sm-8 col-sm-offset-1 post_board">
+     
+        <%= image_tag @post.img_url, class: "img-responsive card-post-img" %>
+  
+      <%=sanitize @post.content %>
+            <div class="posts_show_tags">
+    <% @post.tags.each do |tag| %>
+      <%= link_to tag, tag_path(tag.name), :class => "badge badge-pill badge-danger tags" %>
+    <% end %>
+    </div>
+    </div>

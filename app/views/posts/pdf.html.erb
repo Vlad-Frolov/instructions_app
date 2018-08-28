@@ -1,0 +1,17 @@
+
+<%= render "post_main" %>
+
+<div class="col-sm-10 col-sm-offset-1">  
+ <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+      <% @post.steps.each do |step| %>
+  <strong class="posts_show_step_header"><%= t('data.step.name')%> <%= step.name =%></strong>
+      <div class='row show_block'>
+    
+      <%= sanitize step.content %>
+       
+       <%= image_tag step.img_url, class: "img-responsive card-post-img" %>
+
+<% end %>
+</div>
+  <div class="col-lg-4"></div>

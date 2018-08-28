@@ -11,6 +11,12 @@ class PostsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @steps }
       format.js
+      format.pdf do
+        render pdf: "#{@post.title}",
+        template: "posts/pdf.html.erb",
+        layout: 'pdf.html',
+        encoding: "utf8"
+      end
     end
   end
         

@@ -1,17 +1,6 @@
 <div id="single-post-content" class="container">
   <div class="row" id='feed'>
-    <h2 class='page-title post_board'><%= @post.title %></h2>
-    <div class="col-sm-8 col-sm-offset-1 post_board">
-     
-        <%= image_tag @post.img_url, class: "img-responsive card-post-img" %>
-  
-      <%=sanitize @post.content %>
-            <div class="posts_show_tags">
-    <% @post.tags.each do |tag| %>
-      <%= link_to tag, tag_path(tag.name), :class => "badge badge-pill badge-danger tags" %>
-    <% end %>
-    </div>
-    </div>
+      <%= render "post_main" %>
       <div class="col-sm-3">
       <div class="posted-by">Posted by <%= link_to @post.user.name, user_path(@post.user) %></div>
       <% if can? :rate, @post %>
@@ -22,6 +11,7 @@
         <%= link_to t('posts.show.links.edit'), edit_post_path(@post.id), class: "btn btn-success" %>
         <%= link_to t('posts.show.links.destroy'), post_path(@post.id), method: :delete, class: "btn btn-danger" %>
       <% end %>
+      <%= link_to 'Create PDF document', post_path(@post, :format => :pdf) %>
       </div>
       
     <div class="col-sm-10 col-sm-offset-1">  
