@@ -1,4 +1,2 @@
 
-   $("#mkadmin").click(function() {
-     $("<%= escape_javascript(render @users) %>").replace("#users_table");
-   })
+$("#tableusers").html("<%= j render partial: 'user' %>")

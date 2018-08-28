@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
+  respond_to :js, :json, :html
   def index
-    authorize! :menage, User
     @users = User.all
+    authorize! :menage, User
+    
     
   end  
   
@@ -63,12 +65,12 @@ class UsersController < ApplicationController
     end
 
     def mkadmin
-      authorize! :menage, User
       User.where(id: params[:user_check]).update_all(role: "admin")
       respond_to do |format|
-        format.html {redirect_to users_url}
-        format.js {}
+        format.html { render 'user' }
+        format.js { }
     end
+    index
       
   end
 end

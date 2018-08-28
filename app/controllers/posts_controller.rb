@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
   # skip_authorize_resource :only => :new
   # before_action :redirect_if_not_signed_in, only: [:new]
+  respond_to :js, :json, :html
 
   def show
     @post = Post.includes(:tags).find(params[:id])

@@ -1,4 +1,5 @@
 $('.document').ready(function () {
+    $(".checkbox_user").attr("checked", false)
     $("#trash").attr("disabled", true);
     $("#lock").attr("disabled", true);
     $("#unlock").attr("disabled", true);
