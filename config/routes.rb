@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
     get 'tags/:tag', to: 'posts#index', as: :tag
     
-    resources :users, :only => [:show]
+    resources :users, :only => [:show, :update]
     # post 'users/block', :as => :block_data
     # post 'users/unblock', :as => :unlock_data
     # post 'users/mkadmin', :as => :mkadmin
@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   
     resources :steps do
       put :sort, on: :collection
+    end
+    resources :posts do
+      get :autocomplete_tag_list_tag, :on => :collection
     end
   
     match '*path' => redirect('/'), via: :get

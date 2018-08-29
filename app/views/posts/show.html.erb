@@ -3,9 +3,9 @@
       <%= render "post_main" %>
       <div class="col-sm-3">
       <div class="posted-by">Posted by <%= link_to @post.user.name, user_path(@post.user) %></div>
-      <% if can? :rate, @post %>
+      
         <%= rating_for @post, "original_score" %>
-      <% end %>
+      
        <%= link_to "Back", :back, class: "btn btn-warning" %>
     <% if can? :manage, @post %>
         <%= link_to t('posts.show.links.edit'), edit_post_path(@post.id), class: "btn btn-success" %>

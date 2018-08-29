@@ -24,10 +24,12 @@ gem 'merit'
 gem "russian"
 gem 'trix', git: 'https://github.com/bcoia/trix.git'
 gem 'acts_as_votable'
-gem 'x-editable-rails'
+# gem 'x-editable-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'rails_admin'
+gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'rails-jquery-autocomplete'
 
 
 # gem 'rails-jquery-autocomplete'

@@ -1,7 +1,12 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" ; integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-
+<script>
+$(document).ready(function() {
+    /* Activating Best In Place */
+    jQuery(".best_in_place").best_in_place();
+  });
+</script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
@@ -13,7 +18,7 @@
                       </div>
                       <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
                           <div class="container" style="border-bottom:1px solid black">
-                            <h2><%=@user.name%></h2>
+                            <h2><%= best_in_place @user, :name %></h2>
                           </div>
                             <hr>
                           <ul class="container details">

@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
   # skip_authorize_resource :only => :new
   # before_action :redirect_if_not_signed_in, only: [:new]
+  autocomplete :tag_list, :tag
   respond_to :js, :json, :html
 
   def show
@@ -106,7 +107,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:content, :title, :img_url, :category_id, :tag_list, :rate)
+      params.require(:post).permit(:content, :title, :img_url, :category_id, :tag_list)
                            .merge(user_id: current_user.id)
     end
 end

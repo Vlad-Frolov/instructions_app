@@ -6,6 +6,14 @@ GIT
       rails (> 4.1, <= 6.0)
 
 GIT
+  remote: https://github.com/bernat/best_in_place.git
+  revision: 1b779e60ea912ab9c39d5c999b00c8ac44a8e535
+  specs:
+    best_in_place (3.1.1)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
+
+GIT
   remote: https://github.com/mbleigh/acts-as-taggable-on
   revision: 69322267029b54fe42be9a05e248df9de289a65b
   specs:
@@ -247,6 +255,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-jquery-autocomplete (1.0.4)
+      rails (>= 3.2)
     rails_admin (1.4.1)
       builder (~> 3.1)
       coffee-rails (~> 4.0)
@@ -348,8 +358,6 @@ GEM
     wicked_pdf (1.1.0)
     will_paginate (3.1.6)
     wkhtmltopdf-binary (0.12.4)
-    x-editable-rails (1.5.5.1)
-      railties
     xpath (3.1.0)
       nokogiri (~> 1.8)
 
@@ -359,6 +367,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on!
   acts_as_votable
+  best_in_place!
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
@@ -382,6 +391,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.0)
+  rails-jquery-autocomplete
   rails_admin
   ratyrate
   russian
@@ -399,7 +409,6 @@ DEPENDENCIES
   wicked_pdf
   will_paginate (~> 3.1.0)
   wkhtmltopdf-binary
-  x-editable-rails
 
 RUBY VERSION
    ruby 2.4.0p0

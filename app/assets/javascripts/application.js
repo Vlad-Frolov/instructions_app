@@ -14,6 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
+//= require jquery_ujs
+//= require jquery-ui/widgets/autocomplete
+//= require autocomplete-rails
 //= require bootstrap-sprockets
 //= require cloudinary
 //= require posts/tag_cloud
@@ -23,4 +26,6 @@
 //= require ratyrate
 //= require trix
 //= require post
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .

@@ -15,8 +15,6 @@ class Post < ApplicationRecord
       attributes step: ['steps.content', 'steps.name']
     end
     ratyrate_rateable 'original_score'
-
-    default_scope -> { includes(:user).order(created_at: :desc) }
     scope :by_category, -> (category_name) do 
         joins(:category).where(categories: {name: category_name}) 
       end

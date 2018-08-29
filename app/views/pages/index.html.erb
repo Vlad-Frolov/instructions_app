@@ -33,9 +33,10 @@
   </a>
 </div>
     <div class="col-lg-8 main_page_posts">
+    <div class="main_page_posts_header"><strong><%= t('root.top_5_favorites') %></strong></div>
+      <%= render 'posts_favorite' %>
     <div class="main_page_posts_header"><strong><%= t('root.latest') %></strong></div>
-      <%= render 'posts_latest', :sort => "updated_at DESC" %>
-    <div class="main_page_posts_header"><strong><%= t('root.top_favorites') %></strong></div>      
+      <%= render 'posts_latest' %>
     </div>
     <div class="col-lg-4 main_page_tag_cloud">
       <div class="align_class"><strong><%= t('root.tags') %></strong></div>

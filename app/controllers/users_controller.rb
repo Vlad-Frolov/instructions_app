@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  respond_to :js, :json, :html
+  respond_to :html, :json
   # def index
   #     @users = User.all
   #   authorize! :manage, User
@@ -8,26 +8,21 @@ class UsersController < ApplicationController
   # end
   
   def show
-    @user = User.find params[:id]
+    @user = User.find(params[:id])
+    @posts = @user.posts
+    @posts.order(params[:sort])
     respond_to do |format|
       format.html
       format.json {render :json => @user}
     end
   end
 
-  # def update
-  #   @post = Post.find(params[:id])
   
-  #   respond_to do |format|
-  #     if @post.update_attributes(params[:post])
-  #       format.html { redirect_to @user, notice: 'User was successfully updated.' }
-  #       format.json { head :no_content } # 204 No Content
-  #     else
-  #       format.html { render action: "edit" }
-  #       format.json { render json: @user.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+def update
+  @user = User.find(params[:id])
+  @user.update_attributes(params[:user])
+  respond_with @user
+end
   
   #   def block
   #     authorize! :manage, User
