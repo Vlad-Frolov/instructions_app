@@ -1,17 +1,14 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, except: [:index, :show]
-  # skip_authorize_resource :only => :new
-  # before_action :redirect_if_not_signed_in, only: [:new]
   autocomplete :tag_list, :tag
   respond_to :js, :json, :html
 
   def show
     @post = Post.includes(:tags).find(params[:id])
     @comments = @post.comments.includes(:user)
-    @steps = @post.steps.order('id').paginate(:per_page => 1, :page => params[:page])
+    @steps = @post.steps.order(:id).paginate(:per_page => 1, :page => params[:page])
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: @steps }
       format.js
       format.pdf do
