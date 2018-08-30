@@ -17,3 +17,20 @@
     max-width: 25px;
     max-height: 25px;
 }
+
+.profile_img{
+    max-width: 50px;
+    max-height: 50px;
+
+}
+
+.rewards {
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;    
+    }
+}

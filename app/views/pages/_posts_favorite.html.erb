@@ -7,7 +7,7 @@
             </tr>
           </thead>
         <tbody>
-          <% @favorite.each_with_index do |post, index| %>
+          <% @posts.each_with_index do |post, index| %>
             <tr onclick="window.location.href='<%= post_path(post.id) %>'">
               <th scope="row align_class"><%= index + 1 %></th>
               <td><%= post.title %></td>

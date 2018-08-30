@@ -39,8 +39,8 @@ Merit::Badge.create!({
 })
 Merit::Badge.create!({
   id: 4,
-  name: 'Hommie',
-  description: "Signed in 10 times",
+  name: 'Stepper',
+  description: "Created 7 steps in one instruction",
   custom_fields: {image: "hommie.svg"}
 })
 Merit::Badge.create!({

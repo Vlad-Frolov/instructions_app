@@ -8,33 +8,31 @@ $(document).ready(function() {
   });
 </script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-            <div class="container">    
-                <div class="jumbotron">
-                  <div class="row">
-                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                          <img src="<%= @user.image%>" alt="stack photo" class="img">
-                      </div>
-                      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
-                          <div class="container" style="border-bottom:1px solid black">
-                            <h2><%= best_in_place @user, :name %></h2>
-                          </div>
-                            <hr>
-                          <ul class="container details">
-                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><%=@user.email%></p></li>
-                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span><%=@user.count_posts%></p></li>
-                            <ul>
-                              <%= @user.comments.count %>
-                              
-                              <% @user.badges.each do |badge| %>
-                                <li><div class="bandge-img"><%= image_tag (badge.custom_fields[:image]) %></div><%= badge.name %></li>
-                              <% end %>
-                            </ul>
-                          </ul>
-                      </div>
-                  </div>
-                  <table class="table table-striped" style="text-align: center">
+<div class="container">    
+    <div class="jumbotron">
+      <div class="row">
+          <div class="col-sm-6">
+              
+              <div class="container" style="border-bottom:1px solid black">
+                <h2><img src="<%= @user.image%>" alt="stack photo" class="profile_img"><%= best_in_place @user, :name %></h2>
+              </div>
+                <hr>
+              <ul class="container details">
+                <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><%=@user.email%></p></li>
+                <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span><%=@user.count_posts%></p></li>
+              </ul>
+          </div>
+          <div class="col-sm-6">
+              <li>
+                  <h3><%= t('root.user.rewards') %></h3>
+                  <div><%= render 'badge' %></div>
+                </li>
+          </div>
+      </div>
+                  
+                  
+    <table class="table table-striped" style="text-align: center">
 
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">            

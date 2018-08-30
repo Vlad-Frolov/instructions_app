@@ -37,10 +37,13 @@ module Merit
         post.user.posts.count >= 1
       end
       grant_on 'posts#create', :badge => 'Volunteer', :temporary => true, :model_name => 'Post' do |post|
-        post.user.posts.count >= 10
+        post.user.posts.count >= 5
       end
-      grant_on 'disk#update', :badge => 'Speaker', :temporary => false, :model_name => 'Comment' do |comment|
-        comment.user.comments.count >= 10
+      grant_on 'steps#create', :badge => 'Stepper', :temporary => false, :model_name => 'Step' do |step|
+        step.post.steps.count >= 7
+      end
+      grant_on 'users#show', :badge => 'Speaker', :temporary => false, :model_name => 'User' do |user|
+        user.comments.count >= 10
       end
       grant_on 'sessions#create', :badge => 'Hommie', :temporary => false, :model_name => 'User' do |user|
         user.sign_in_count >= 1

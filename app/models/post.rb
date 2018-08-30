@@ -16,7 +16,7 @@ class Post < ApplicationRecord
     end
     ratyrate_rateable 'original_score'
     scope :by_category, -> (category_name) do 
-        joins(:category).where(categories: {name: category_name}) 
+        includes(:category).where(categories: {name: category_name}) 
       end
     # scope :search, -> (search) do
     #     where("title ILIKE lower(?) OR content ILIKE lower(?)", "%#{search}%", "%#{search}%")

@@ -20,29 +20,29 @@ class PostsController < ApplicationController
     end
   end
         
-    def index
-      @posts = get_posts.paginate(page: params[:page])
-      @categories = Category.all
-      respond_to do |format|
-        format.html
-        format.js { render partial: 'posts/posts_pagination_page' }
-      end 
-    end
-
-    def edit
-      authorize! :manage, @post
-      @categories = Category.all
-      @step = Step.new
-      @steps = @post.steps.order("id")
-    end
-
-    def destroy
-      authorize! :manage, @post
-      @post = Post.find(params[:id]).destroy
-      if @post.destroy
-        redirect_to posts_path, success:  "#{t(".success_destroy")}"
-      end
+  def index
+    @posts = get_posts.paginate(page: params[:page])
+    @categories = Category.all
+    respond_to do |format|
+      format.html
+      format.js { render partial: 'posts/posts_pagination_page' }
     end 
+  end
+
+  def edit
+    authorize! :manage, @post
+    @categories = Category.all
+    @step = Step.new
+    @steps = @post.steps.order("id")
+  end
+
+  def destroy
+    authorize! :manage, @post
+    @post = Post.find(params[:id]).destroy
+    if @post.destroy
+      redirect_to posts_path
+    end
+  end 
 
     def get_posts
       
@@ -61,17 +61,18 @@ class PostsController < ApplicationController
     end
 
     def new
+
+      authorize! :new, Post
+      @categories = Category.all
+      @post = Post.new
       
-        @categories = Category.all
-        @post = Post.new
-        authorize! :create, @post
         
     end
 
     def create
      
       @post = Post.new(post_params)
-      
+      authorize! :create, @post
       respond_to do |format|
         if @post.save 
           format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -81,7 +82,7 @@ class PostsController < ApplicationController
           format.json { render json: @post.errors, status: :unprocessable_entity }
         end
       end
-      authorize! :create, @post
+      
     end
 
     def update

@@ -1,0 +1,18 @@
+<table class='rewards' >
+  <thead>
+  <tr>
+    <th>Badge</th>
+    <th>Name</th>
+    <th>Description</th> 
+  </tr>
+  </thead>
+  <tbody>
+    <% @user.badges.each do |badge| %>
+      <tr>
+        <td><div class="bandge-img"><%= image_tag (badge.custom_fields[:image]) %></div></td>
+        <td><%= badge.name %></td>
+        <td><%= badge.description %></td>
+      </tr>
+    <% end %>
+    </tbody>
+</table>

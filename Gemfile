@@ -30,6 +30,7 @@ gem 'wkhtmltopdf-binary'
 gem 'rails_admin'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'rails-jquery-autocomplete'
+gem 'themer', github: 'jonhue/themer'
 
 
 # gem 'rails-jquery-autocomplete'
