@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   respond_to :js, :json, :html
 
   def show
-    @post = Post.includes(:tags).find(params[:id])
+    @post = Post.includes(:tags, :steps).find(params[:id])
     @comments = @post.comments.includes(:user)
     @steps = @post.steps.order(:id).paginate(:per_page => 1, :page => params[:page])
     respond_to do |format|
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
         
   def index
-    @posts = get_posts.paginate(page: params[:page])
+    @posts = get_posts.includes(:category).paginate(page: params[:page])
     @categories = Category.all
     respond_to do |format|
       format.html
