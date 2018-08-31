@@ -1,8 +1,5 @@
-<div class="collapse navbar-collapse navbar-right" id="navbar-collapsible-content">
-  <ul class="nav navbar-nav ">
-    <li class="dropdown">
-      <li class="dropdown pc-menu">
-          <a ='true' data-no-turbolink='true' href="#" class="dropdown-toggle" data-toggle="dropdown">Language</span></a>
+    <li class="dropdown pc-menu">
+          <a data-no-turbolink='true' href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.name %> <span class="glyphicon glyphicon-user pull-right"></span></a>
           <ul class="dropdown-menu">
             <li class="nav-item<%= " active" if I18n.locale == :en %>">
               <%= link_to "En", { locale: :en }, class: 'nav-link' %>
@@ -13,7 +10,5 @@
           </ul>
         </li>
 
-
-    <%= render collapsible_links_partial_path %>
-  </ul>
-</div><!-- navbar-collapse -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

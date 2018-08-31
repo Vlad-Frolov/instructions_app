@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_25_091946) do
+ActiveRecord::Schema.define(version: 2018_08_31_182041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "average_caches", id: :serial, force: :cascade do |t|
-    t.integer "rater_id"
-    t.string "rateable_type"
-    t.integer "rateable_id"
-    t.float "avg", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "badges_sashes", force: :cascade do |t|
     t.integer "badge_id"
@@ -71,27 +62,10 @@ ActiveRecord::Schema.define(version: 2018_08_25_091946) do
     t.datetime "created_at"
   end
 
-  create_table "merit_score_points", force: :cascade do |t|
-    t.bigint "score_id"
-    t.integer "num_points", default: 0
-    t.string "log"
-    t.datetime "created_at"
-    t.index ["score_id"], name: "index_merit_score_points_on_score_id"
-  end
-
   create_table "merit_scores", force: :cascade do |t|
     t.bigint "sash_id"
     t.string "category", default: "default"
     t.index ["sash_id"], name: "index_merit_scores_on_sash_id"
-  end
-
-  create_table "overall_averages", force: :cascade do |t|
-    t.string "rateable_type"
-    t.bigint "rateable_id"
-    t.float "overall_avg", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["rateable_type", "rateable_id"], name: "index_overall_averages_on_rateable_type_and_rateable_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -188,7 +162,7 @@ ActiveRecord::Schema.define(version: 2018_08_25_091946) do
     t.string "provider"
     t.string "uid"
     t.string "about"
-    t.string "image"
+    t.string "image", default: "https://humancoders-formations.s3.amazonaws.com/uploads/course/logo/15/thumb_bigger_formation-ruby.png"
     t.integer "count_posts", default: 0
     t.string "role", default: "user"
     t.integer "sash_id"

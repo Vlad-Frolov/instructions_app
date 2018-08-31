@@ -2,10 +2,6 @@
   <div class="row">
     <div class="col-sm-12" id="feed">
       <h1 align="center">Edit the post</h1>
-      <div class="posts_edit_button_group">
-        <%= link_to t('posts.edit.form.links.switch'), post_path(@post.id) %>
-        <button onclick="updateDiv()" class="btn btn-secondary"><%= t('posts.edit.buttons.refresh') %></button>
-      </div>
         <%= render 'posts/new/post_form' %>
       </div>
       

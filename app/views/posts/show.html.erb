@@ -2,19 +2,18 @@
   <div class="row" id='feed'>
       <%= render "post_main" %>
       <div class="col-sm-3">
-      <div class="posted-by">Posted by <%= link_to @post.user.name, user_path(@post.user) %></div>
+      <div class="posted-by">Posted by <%= link_to @post.user.name, user_path(@post.user)%></div>
       
         <%= rating_for @post, "original_score" %>
-      
-       <%= link_to "Back", :back, class: "btn btn-warning" %>
+    
     <% if can? :manage, @post %>
         <%= link_to t('posts.show.links.edit'), edit_post_path(@post.id), class: "btn btn-success" %>
         <%= link_to t('posts.show.links.destroy'), post_path(@post.id), method: :delete, class: "btn btn-danger" %>
       <% end %>
-      <%= link_to 'Create PDF document', post_path(@post, :format => :pdf), class: 'btn btn-warning' %>
+      <%= link_to 'Create PDF', post_path(@post, :format => :pdf), class: 'btn btn-warning' %>
       <div class="main_page_posts_header"><strong><%= t('root.Steps') %></strong></div>
      <% @post.steps.order('id').each_with_index do |step, index| %>
-             <h5 class="show_step"><a href="<%=@post.id%>?page=<%=index+1%>" class="f-icon-color"><%= (index+1).to_s + ") " + step.name %></a></h5>  
+             <h5 class="show_step"><a href="<%=@post.id%>?page=<%=index+1%>" class="btn btn-social-icon btn-success btn-md"><%= (index+1).to_s + ". " + step.name %></a></h5>  
             <% end %>
       </div>
       
