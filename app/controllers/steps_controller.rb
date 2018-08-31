@@ -33,28 +33,27 @@ class StepsController < ApplicationController
     end
   end
 
-    
   def update
     authorize! :manage, Post
     respond_to do |format|
-    if @step.update(step_params)
-      format.html { redirect_to edit_post_path(@step.post_id), notice: 'Step was successfully updated.' }
-      format.json { render :show, status: :ok, location: @step }
-    else
-      format.html { render :edit }
-      format.json { render json: @step.errors, status: :unprocessable_entity }
+      if @step.update(step_params)
+        format.html { redirect_to edit_post_path(@step.post_id), notice: 'Step was successfully updated.' }
+        format.json { render :show, status: :ok, location: @step }
+      else
+        format.html { render :edit }
+        format.json { render json: @step.errors, status: :unprocessable_entity }
+      end
     end
   end
-end
 
-    private
+  private
 
-    def set_step
-      @step = Step.find(params[:id])
-    end
+  def set_step
+    @step = Step.find(params[:id])
+  end
 
-    def step_params
-        params.require(:step).permit(:post_id, :name, :content, :img_url )
-    end
+  def step_params
+    params.require(:step).permit(:post_id, :name, :content, :img_url)
+  end
 
 end

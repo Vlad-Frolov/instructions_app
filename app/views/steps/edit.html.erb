@@ -3,9 +3,9 @@
 <div class="container new-post">
   <div class="row">
     <div class="col-sm-12" id="feed">
-      <h1 align="center">Edit step</h1>
-<%= link_to t('steps.edit.destroyButton'), post_step_path(@step.id), method: :delete, :class => "btn btn-danger"%>
-        
+      <h1 align="center">Edit step
+      <%= link_to t('steps.edit.destroy_step'), post_step_path(@step.id), method: :delete, :class => "btn btn-danger"%>
+      </h1>
         <%= bootstrap_form_for(@step) do |f| %>
           <%= f.text_field  :name, 
                             maxlength: 100, 
@@ -21,15 +21,15 @@
                           maxlength: 1000,
                           placeholder: 'Describe your step', 
                           class: 'editor' %>
-          <%= f.text_area :img_url,
+          <%= f.hidden_field :img_url,
                           rows: 1,
                           class: 'form-control',
                           placeholder: 'Paste image url',
                           id: 'url_up' %>
-          <a class="btn btn-social-icon btn-success btn-md" id="upload_widget_opener">
+           <a class="btn btn-social-icon btn-success btn-md" id="upload_widget_opener">
             <i class="fa fa-picture-o steps_edit_icons"></i>
           </a>
-        <button type="submit" class="btn btn-facebook edit_post_button"><%= t('posts.edit.update') %></button>
+          <%= f.submit "Save step", class: 'form-control' %>
       <% end %>
     </div>
   </div>

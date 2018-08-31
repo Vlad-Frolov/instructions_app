@@ -1,7 +1,7 @@
 class PostChannel < ApplicationCable::Channel
+  #When a user became consumer
   def subscribed
     stream_from channel
-    authorize! :show, Comment
   end
 
   def unsubscribed

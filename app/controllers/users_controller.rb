@@ -1,11 +1,5 @@
 class UsersController < ApplicationController
   respond_to :html, :json
-  # def index
-  #     @users = User.all
-  #   authorize! :manage, User
-    
-    
-  # end
   
   def show
     @user = User.find(params[:id])
@@ -16,64 +10,22 @@ class UsersController < ApplicationController
       format.json {render :json => @user}
     end
   end
-
   
-def update
-  @user = User.find(params[:id])
-  @user.update_attributes(params[:user])
-  respond_with @user
-end
-
-def destroy
-  authorize! :manage, :all
-  @user = User.find(params[:id]).destroy
-  if @user.destroy
-    redirect_to root_path
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+    respond_with @user
   end
-end 
-  
-  #   def block
-  #     authorize! :manage, User
-  #     User.where(id: params[:user_check]).update_all(role: "banned")
-  #     respond_to do |format|
-  #       format.html 
-  #       format.js 
-  #     end
-  #     redirect_to users_url
 
-  #   end
-  
-  #   def unblock
-  #     authorize! :manage, User
-  #     User.where(id: params[:user_check]).update_all(role: "user")
-  #     respond_to do |format|
-  #       format.html 
-  #       format.js 
-  #     end
-  #     redirect_to users_url
+  def destroy
+    authorize! :manage, :all
+    @user = User.find(params[:id]).destroy
+    if @user.destroy
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.json { head :no_content }
+      end
+    end
+  end 
 
-  #   end
-
-  #   def destroy
-  #     authorize! :manage, User
-  #     if params[:user_check]
-  #       User.where(id: params[:user_check]).destroy_all
-  #     end 
-  #     respond_to do |format|
-  #       format.html 
-  #       format.js 
-  #     end
-  #     redirect_to users_url
-
-  #   end
-
-  #   def mkadmin
-  #     User.where(id: params[:user_check]).update_all(role: "admin")
-  #     respond_to do |format|
-  #       format.html { render 'user' }
-  #       format.js { }
-  #   end
-  #   index
-      
-  # end
 end
