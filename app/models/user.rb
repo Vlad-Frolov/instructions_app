@@ -1,14 +1,12 @@
 class User < ApplicationRecord
   has_merit
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  ratyrate_rater
   has_many :comments, dependent: :destroy
+  has_many :posts, dependent: :destroy
+  ratyrate_rater
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable,
          :omniauth_providers => [:facebook, :google_oauth2, :vkontakte, :github]
-  has_many :posts #, dependent: :destroy
+  
 
 
   def self.google_from_omniauth(auth)

@@ -13,14 +13,14 @@ class Post < ApplicationRecord
       attributes :title, :content
       attributes comment: 'comments.text'
       attributes step: ['steps.content', 'steps.name']
+      options :all, :type => :fulltext
     end
+
     ratyrate_rateable 'original_score'
+
     scope :by_category, -> (category_name) do 
         includes(:category).where(categories: {name: category_name}) 
       end
-    # scope :search, -> (search) do
-    #     where("title ILIKE lower(?) OR content ILIKE lower(?)", "%#{search}%", "%#{search}%")
-    # end
 
     def avg_rating_dimension(post)
       array = Rate.where(rateable_id: id, rateable_type: 'Post').where(dimension: 'original_score')
