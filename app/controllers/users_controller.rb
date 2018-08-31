@@ -23,6 +23,14 @@ def update
   @user.update_attributes(params[:user])
   respond_with @user
 end
+
+def destroy
+  authorize! :manage, :all
+  @user = User.find(params[:id]).destroy
+  if @user.destroy
+    redirect_to root_path
+  end
+end 
   
   #   def block
   #     authorize! :manage, User

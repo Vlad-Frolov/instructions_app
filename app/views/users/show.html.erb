@@ -15,7 +15,12 @@ $(document).ready(function() {
           <div class="col-sm-6">
               
               <div class="container" style="border-bottom:1px solid black">
-                <h2><img src="<%= @user.image%>" alt="stack photo" class="profile_img"><%= best_in_place @user, :name %></h2>
+                <h2><img src="<%= @user.image%>" alt="stack photo" class="profile_img">
+                <%= best_in_place @user, :name %>
+                <% if can? :manage, :all %>
+                  <%= link_to t('users.delete_user'), @user, method: :delete, :class => "btn btn-danger"%>
+                <% end %>
+                </h2>
               </div>
                 <hr>
               <ul class="container details">

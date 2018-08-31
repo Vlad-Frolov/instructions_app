@@ -13,9 +13,11 @@ class Post < ApplicationRecord
       attributes :title, :content
       attributes comment: 'comments.text'
       attributes step: ['steps.content', 'steps.name']
+      options :all, :type => :fulltext
     end
     
     ratyrate_rateable 'original_score'
+
     scope :by_category, -> (category_name) do 
         includes(:category).where(categories: {name: category_name}) 
       end
