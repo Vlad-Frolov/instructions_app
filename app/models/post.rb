@@ -5,7 +5,7 @@ class Post < ApplicationRecord
     validates :title, presence: true, length: { minimum: 5, maximum: 255 }
     validates :content, presence: true, length: { minimum: 20 }
     validates :category_id, presence: true
-    has_many :steps
+    has_many :steps, dependent: :destroy
     has_many :comments, dependent: :destroy
     acts_as_ordered_taggable
 
@@ -14,13 +14,11 @@ class Post < ApplicationRecord
       attributes comment: 'comments.text'
       attributes step: ['steps.content', 'steps.name']
     end
+    
     ratyrate_rateable 'original_score'
     scope :by_category, -> (category_name) do 
         includes(:category).where(categories: {name: category_name}) 
       end
-    # scope :search, -> (search) do
-    #     where("title ILIKE lower(?) OR content ILIKE lower(?)", "%#{search}%", "%#{search}%")
-    # end
 
     def avg_rating_dimension(post)
       array = Rate.where(rateable_id: id, rateable_type: 'Post').where(dimension: 'original_score')
@@ -31,6 +29,3 @@ class Post < ApplicationRecord
     end
     
 end
-
-#adminka
-#search

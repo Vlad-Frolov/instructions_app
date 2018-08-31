@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     # delete 'users/destroy', :as => :destroy
     resources :posts, :only => [:index, :show, :update, :edit, :destroy, :new]
     resources :posts do
-      resources :steps, :only => [:create, :update, :edit, :destroy, :clear]
+      resources :steps, :only => [:create, :update, :edit, :destroy]
     end
   
     resources :steps do
