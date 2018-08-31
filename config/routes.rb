@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
     get 'tags/:tag', to: 'posts#index', as: :tag
     
-    resources :users, :only => [:show, :update]
+    resources :users, :only => [:show, :destroy]
     # post 'users/block', :as => :block_data
     # post 'users/unblock', :as => :unlock_data
     # post 'users/mkadmin', :as => :mkadmin
