@@ -4,9 +4,9 @@ class PostsController < ApplicationController
   respond_to :js, :json, :html
 
   def show
-    @post = Post.includes(:tags, :steps).find(params[:id])
+    @post = Post.find(params[:id])
     @comments = @post.comments.includes(:user)
-    @steps = @post.steps.order('id').paginate(:per_page => 1, :page => params[:page])
+    @steps = @post.steps.paginate(:per_page => 1, :page => params[:page])
     respond_to do |format|
       format.html 
       format.json { render json: @steps }

@@ -2,7 +2,7 @@ class StepsController < ApplicationController
   before_action :set_step, only: [:edit, :destroy, :update]
   skip_before_action :verify_authenticity_token
   respond_to :js, :json, :html
-
+  load_and_authorize_resource
   def edit
   
   end

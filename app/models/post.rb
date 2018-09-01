@@ -19,8 +19,8 @@ class Post < ApplicationRecord
     ratyrate_rateable 'original_score'
 
     scope :by_category, -> (category_name) do 
-        includes(:category).where(categories: {name: category_name}) 
-      end
+      includes(:category).where(categories: {name: category_name}) 
+    end
 
     def avg_rating_dimension(post)
       array = Rate.where(rateable_id: id, rateable_type: 'Post').where(dimension: 'original_score')

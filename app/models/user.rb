@@ -7,7 +7,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable,
          :omniauth_providers => [:facebook, :google_oauth2, :vkontakte, :github]
   
-
+  # providers => {:vkontakte_from_omniauth, :facebook_from_omniauth, :from_omniauth, :google_from_omniauth}
+  # scope providers, -> (auth) do 
+  #     self.authorize(auth)
+  #   end
 
   def self.google_from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
