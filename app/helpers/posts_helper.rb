@@ -8,7 +8,6 @@ module PostsHelper
         end
     end
     
-    
     def no_posts_path()
       @posts.empty? ? 'posts/shared/no_posts' : 'posts/shared/empty_partial'
     end

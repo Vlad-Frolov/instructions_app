@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @posts.order('updated_at DESC').limit(5).each_with_index do |post, index| %>
+    <% latest_posts.each_with_index do |post, index| %>
       <tr onclick="window.location.href='<%= post_path(post.id) %>'">
         <th scope="row align_class"><%= index + 1 %></th>
         <td><%= post.title %></td>

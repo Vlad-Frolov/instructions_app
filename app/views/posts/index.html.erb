@@ -1,29 +1,25 @@
-
 <script src="/assets/posts/tag_cloud"></script>
-
 <div id="branch-main-content" class="container">
   <div class="row">
     <h1 class="page-title">Instructions</h1>
     <%= render 'posts/create_new_post' %>
-  </div><!-- row -->
+  </div>
   <div class="row">
     <%= render "posts/categories/category" %>
   </div>
   <p>Tag cloud</p>
     <div class="col-lg-12 tagcloud">
-         <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
-          <%= link_to tag.name, tag_path(tag.name), class: "css_class label label-success" %>
-        <% end %>
+      <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: "css_class label label-success" %>
+      <% end %>
     </div>
   <div class="row">
     <div class="col-sm-12" id="feed">
-      <%= render @posts %>
-      
+      <%= render @posts %>    
       <%= render no_posts_path %>
     </div>
-  </div><!-- row -->	
-
+  </div>
   <div class="infinite-scroll">
     <%= will_paginate @posts %>
   </div>
-</div><!-- container -->
+</div>

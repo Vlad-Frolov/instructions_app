@@ -21,7 +21,6 @@
 //= require cloudinary
 //= require posts/tag_cloud
 //= require steps/upload_img
-//= require users/index
 //= require jquery.raty
 //= require ratyrate
 //= require trix
