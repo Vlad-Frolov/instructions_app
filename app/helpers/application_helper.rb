@@ -3,9 +3,6 @@ require 'navigation_helper.rb'
 module ApplicationHelper
   include NavigationHelper
 
-  def current_theme
-    themer current_user.theme
-  end
 
   def markdown(text)
     renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)

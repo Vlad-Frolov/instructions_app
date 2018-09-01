@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 2018_08_31_182041) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "average_caches", id: false, force: :cascade do |t|
+  end
+
   create_table "badges_sashes", force: :cascade do |t|
     t.integer "badge_id"
     t.integer "sash_id"
@@ -66,6 +69,9 @@ ActiveRecord::Schema.define(version: 2018_08_31_182041) do
     t.bigint "sash_id"
     t.string "category", default: "default"
     t.index ["sash_id"], name: "index_merit_scores_on_sash_id"
+  end
+
+  create_table "overall_averages", id: false, force: :cascade do |t|
   end
 
   create_table "posts", force: :cascade do |t|

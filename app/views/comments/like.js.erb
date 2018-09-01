@@ -1,5 +1,0 @@
-$('.like_post').bind('ajax:success', function(){
-   $(this).parent().find('.vote_count').html('<%= escape_javascript comment.votes_for.size.to_s %>');
-   $(this).closest('.like_post').hide();
-   $(this).closest('.votes').html(' <%= link_to "Unlike", unlike_post_path(comment), remote: true, method: :put, class: 'unlike_post' %>');
-});

@@ -1,7 +1,5 @@
 module NavigationHelper
-  def collapsible_links_language_path
-    'layouts/navigation/collapsible_elements/language'
-  end
+
   def collapsible_links_partial_path
       if user_signed_in?
         'layouts/navigation/collapsible_elements/signed_in_links'
