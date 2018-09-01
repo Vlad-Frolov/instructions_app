@@ -1,19 +1,5 @@
 <div class="collapse navbar-collapse navbar-right" id="navbar-collapsible-content">
   <ul class="nav navbar-nav ">
-    <li class="dropdown">
-      <li class="dropdown pc-menu">
-          <a ='true' data-no-turbolink='true' href="#" class="dropdown-toggle" data-toggle="dropdown">Language</span></a>
-          <ul class="dropdown-menu">
-            <li class="nav-item<%= " active" if I18n.locale == :en %>">
-              <%= link_to "En", { locale: :en }, class: 'nav-link' %>
-            </li>
-            <li class="nav-item<%= " active" if I18n.locale == :ru %>">
-              <%= link_to "Рус", { locale: :ru }, class: 'nav-link' %></li>
-            </li>
-          </ul>
-        </li>
-
-
     <%= render collapsible_links_partial_path %>
   </ul>
-</div><!-- navbar-collapse -->
+</div>

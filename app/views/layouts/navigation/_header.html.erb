@@ -8,8 +8,7 @@
       <%= link_to 'My_app', root_path, class: 'navbar-brand' %>
       <%= link_to t('header.links.instruction'), posts_path, class: 'navbar-brand pc-menu' %>
       <div class="input-group">
-            <input type="text" class="form-control" id="main_search_field" ></input>
-           
-              <button class="btn btn-secondary" id='btn-search' type="button" onclick="searchPosts()"><%= t('header.buttons.search') %> </button>
-          </div>
+        <input type="text" class="form-control" id="main_search_field" ></input>
+        <button class="btn btn-secondary" id='btn-search' type="button" onclick="searchPosts()"><%= t('header.buttons.search') %> </button>
+      </div>
     </div>
