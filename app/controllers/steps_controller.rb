@@ -2,12 +2,12 @@ class StepsController < ApplicationController
   before_action :set_step, only: [:edit, :destroy, :update]
   skip_before_action :verify_authenticity_token
   respond_to :js, :json, :html
+
   def edit
   
   end
 
   def create
-    
     @post = Post.find(params[:post_id])
     authorize! :manage, @post
     @step = Step.new(:post=>@post)

@@ -1,25 +1,18 @@
 class UsersController < ApplicationController
+  before_action :set_user
   respond_to :html, :json
   
   def show
-    @user = User.find(params[:id])
-    @posts = @user.posts
-    @posts.order(params[:sort])
+    @posts = @user.posts.order('updated_at DESC')
     respond_to do |format|
       format.html
       format.json {render :json => @user}
     end
   end
   
-  def update
-    @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
-    respond_with @user
-  end
-
   def destroy
     authorize! :manage, :all
-    @user = User.find(params[:id]).destroy
+    @user.destroy
     if @user.destroy
       respond_to do |format|
         format.html { redirect_to posts_path }
@@ -27,5 +20,11 @@ class UsersController < ApplicationController
       end
     end
   end 
+
+  private 
+  
+  def set_user
+    @user = User.find(params[:id])
+  end
 
 end
