@@ -8,14 +8,21 @@
     <%= comment.text %>
     
   </div>
-    <%= link_to like_comment_path(comment), remote: true, method: :put do %>
-      Upvote
+ 
+    <%= link_to like_comment_path(comment), class: 'likebtn-wrapper', remote: true, method: :put do %>
+    <div id='<%=comment.id%>like-count'>
       <%= comment.get_upvotes.size %>
     </div>
   <% end %>
-
+  
   <%= link_to dislike_comment_path(comment),remote: true, method: :put do %>
     Downvote
-  <%= comment.get_downvotes.size %>
+  <div id='<%=comment.id%>dislike-count'>
+      <%= comment.get_downvotes.size %>
+    </div>
     <% end %>
 </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+

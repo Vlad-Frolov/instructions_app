@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @comment.upvote_by current_user
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js { render layout: false }
+      format.js 
     end 
   end  
       
@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     @comment.downvote_by current_user
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js { render layout: false }
+      format.js 
     end 
   end
   
