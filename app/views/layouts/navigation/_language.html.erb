@@ -1,0 +1,12 @@
+<li class="dropdown">
+      <li class="dropdown pc-menu">
+          <a href="#" data-toggle="dropdown">Language</span></a>
+          <ul class="dropdown-menu">
+            <li class="nav-item<%= " active" if I18n.locale == :en %>">
+              <%= link_to "En", { locale: :en }, class: 'nav-link' %>
+            </li>
+            <li class="nav-item<%= " active" if I18n.locale == :ru %>">
+              <%= link_to "Рус", { locale: :ru }, class: 'nav-link' %></li>
+            </li>
+          </ul>
+        </li>
