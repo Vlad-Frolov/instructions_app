@@ -8,10 +8,12 @@
     <%= comment.text %>
     
   </div>
-    <%= link_to like_comment_path(comment), remote: true, method: :put do %>
-      Upvote
-    <%= comment.get_upvotes.size %>
-  <% end %>
+    <div class="votes">
+      <%= link_to like_comment_path(comment), remote: true, class: 'like_comment', method: :put %>
+    </div>
+    <div class="vote_count">
+      <%= comment.get_upvotes.size %>
+    </div>
 
   <%= link_to dislike_comment_path(comment),remote: true, method: :put do %>
     Downvote
