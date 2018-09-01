@@ -11,7 +11,7 @@ class Ability
       can :access, :rails_admin
       can :dashboard      
     end
-    
+
     if user.role == "user"
       can [:create], Post
       can :update, User do |u|
