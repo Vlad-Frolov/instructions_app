@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "omniauth_callbacks" }
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
-    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-    post '/rate' => 'rater#create', :as => 'rate'
-    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-    root to: 'pages#index'
-    
+    root to: 'pages#index'  
     devise_scope :user do
       get 'login', to: 'devise/sessions#new'
       get 'signup', to: 'devise/registrations#new'
@@ -13,10 +9,6 @@ Rails.application.routes.draw do
     get 'tags/:tag', to: 'posts#index', as: :tag
     
     resources :users, :only => [:show, :destroy]
-    # post 'users/block', :as => :block_data
-    # post 'users/unblock', :as => :unlock_data
-    # post 'users/mkadmin', :as => :mkadmin
-    # delete 'users/destroy', :as => :destroy
     resources :posts, :only => [:index, :show, :update, :edit, :destroy, :new]
     resources :posts do
       resources :steps, :only => [:create, :update, :edit, :destroy]
@@ -38,5 +30,7 @@ Rails.application.routes.draw do
         put "dislike", to: "comments#downvote"
       end
     end
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+    post '/rate' => 'rater#create', :as => 'rate' 
   end
 end

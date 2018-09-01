@@ -29,22 +29,21 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-# en:
-#    header:
-#     form:
-#       placeholder: "Search"
-#     links:
-#       login: "Login"
-#       signup: "Signup"
-#       posts: "Instructions"
-#       profile: "Profile"
-#       instruction: "Instructions"
-#     buttons:
-#       search: 'Search'
-#    data:
-#     step:
-#       name: "Step"
 en: 
+header:
+  form:
+    placeholder: "Search"
+  links:
+    login: "Login"
+    signup: "Signup"
+    posts: "Instructions"
+    profile: "Profile"
+    instruction: "Instructions"
+  buttons:
+    search: 'Search'
+  data:
+  step:
+    name: "Step"
 admin:
     js:
       true: True
