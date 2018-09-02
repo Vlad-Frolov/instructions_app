@@ -33,10 +33,10 @@ module Merit
       #
       #   comment.votes.count == 5
       # end
-      grant_on 'posts#create', :badge => 'Discoverer', :temporary => true, :model_name => 'Post' do |post|
+      grant_on 'posts#create', :badge => 'Discoverer', :temporary => false, :model_name => 'Post' do |post|
         post.user.posts.count >= 1
       end
-      grant_on 'posts#create', :badge => 'Volunteer', :temporary => true, :model_name => 'Post' do |post|
+      grant_on 'posts#create', :badge => 'Volunteer', :temporary => false, :model_name => 'Post' do |post|
         post.user.posts.count >= 5
       end
       grant_on 'steps#create', :badge => 'Stepper', :temporary => false, :model_name => 'Step' do |step|
@@ -45,16 +45,7 @@ module Merit
       grant_on 'users#show', :badge => 'Speaker', :temporary => false, :model_name => 'User' do |user|
         user.comments.count >= 10
       end
-      grant_on 'sessions#create', :badge => 'Hommie', :temporary => false, :model_name => 'User' do |user|
-        user.sign_in_count >= 1
-      end
-      grant_on 'rater#create', :badge => 'Guide', :temporary => false, :model_name => 'Rate' do |rate|
-        rate.user.post.stars == 5
-      end
-
-      
-      
-      
+    
       # Changes his name by one wider than 4 chars (arbitrary ruby code case)
       # grant_on 'registrations#update', badge: 'autobiographer',
       #   temporary: true, model_name: 'User' do |user|

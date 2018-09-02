@@ -43,13 +43,6 @@ Merit::Badge.create!({
   description: "Created 7 steps in one instruction",
   custom_fields: {image: "hommie.svg"}
 })
-Merit::Badge.create!({
-  id: 5,
-  name: 'Hommie',
-  description: "Got 5 stars",
-  custom_fields: {image: "guide.svg"}
-})
-
 
 # Create application badges (uses https://github.com/norman/ambry)
 # badge_id = 0
