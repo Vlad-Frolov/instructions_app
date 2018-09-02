@@ -1,7 +1,6 @@
 class StepsController < ApplicationController
   before_action :set_step, only: [:edit, :destroy, :update]
   skip_before_action :verify_authenticity_token
-  respond_to :js, :json, :html
   
   def edit
   
@@ -18,7 +17,7 @@ class StepsController < ApplicationController
         format.html { redirect_to edit_post_path(@post.id), notice: 'Step was successfully created.' }
         format.json { render :show, status: :created, location: @step }
       else
-        format.html { render :new }
+        format.html 
         format.json { render json: @step.errors, status: :unprocessable_entity }
       end
     end

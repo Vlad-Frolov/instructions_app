@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def upvote 
     @comment = Comment.find(params[:id])
-    @comment.upvote_by current_user
+    @comment.like_cout current_user
     respond_to do |format|
       format.html { redirect_to :back }
       format.js 

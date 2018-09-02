@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
   autocomplete :tag_list, :tag
-  respond_to :js, :json, :html
 
   def show
     @post = Post.find(params[:id])

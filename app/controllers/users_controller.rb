@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user
-  respond_to :html, :json
   
   def show
     @posts = @user.posts.order('updated_at DESC')
