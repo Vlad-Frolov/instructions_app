@@ -1,0 +1,18 @@
+<table class="table table-striped" style="text-align: center">
+  <thead>
+    <tr>
+      <th class="comments_image">#</th>
+      <th class="comments_image"><%= t('posts.table.title') %></th>
+      <th class="comments_image"><%= t('posts.table.update') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each_with_index do |post, index| %>
+      <tr onclick="window.location.href='<%= post_path(post.id) %>'">
+        <th scope="row" class="comments_image"><%= index + 1 %></th>
+        <td><%= post.title %></td>
+        <td><%= post.updated_at.strftime("%d.%m.%y, %H:%M") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

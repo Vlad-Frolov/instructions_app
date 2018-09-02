@@ -4,9 +4,6 @@
       <h1 align="center">Edit the post</h1>
         <%= render 'posts/new/post_form' %>
       </div>
-      
-
-      <div>
       <div class="main_page_posts_header"><strong><%= t('root.steps') %></strong></div>
         <table class="table table-striped posts_index_table" style="margin-top:0">
           <thead>
@@ -33,13 +30,12 @@
           <%= f.number_field :post_id, :value => @post.id %>
         </div>
         <div class="input-group">
-          <span class="input-group-addon"><%= t('Add step') %></span>
+          <span class="input-group-addon"><%= t('Step name') %></span>
           <%= f.text_field :name, :class => "form-control" %>
         </div>
-        <button type="submit" class="btn btn-success posts_edit_form_button"><%= t('posts.edit.form.button') %></button>
+        <button type="submit" class="btn btn-success posts_edit_form_button"><%= t('posts.edit.form.Add step') %></button>
       <% end %>
     </div>
-    
   </div>
 </div>
 
