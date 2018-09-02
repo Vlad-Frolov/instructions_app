@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "omniauth_callbacks" }
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'  
     root to: 'pages#index'  
     devise_scope :user do
       get 'login', to: 'devise/sessions#new'
@@ -30,7 +31,6 @@ Rails.application.routes.draw do
         put "dislike", to: "comments#downvote"
       end
     end
-    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     post '/rate' => 'rater#create', :as => 'rate' 
   end
 end
