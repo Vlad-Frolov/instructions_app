@@ -31,19 +31,15 @@
 
 en: 
 header:
-  form:
-    placeholder: "Search"
-  links:
-    login: "Login"
-    signup: "Signup"
-    posts: "Instructions"
-    profile: "Profile"
-    instruction: "Instructions"
-  buttons:
-    search: 'Search'
-  data:
-  step:
-    name: "Step"
+  login: "Login"
+  signup: "Signup"
+  posts: "Instructions"
+  profile: "Profile"
+  instruction: "Instructions"
+  search: 'Search'
+  language: 'Language'
+data:
+  step_name: "Step"
 admin:
     js:
       true: True

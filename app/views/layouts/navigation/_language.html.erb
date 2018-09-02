@@ -1,6 +1,6 @@
 <li class="dropdown">
   <li class="dropdown pc-menu">
-    <a href="#" data-toggle="dropdown">Language</span></a>
+    <a href="#" data-toggle="dropdown"><%= t('header.language')%></span></a>
     <ul class="dropdown-menu">
       <li class="nav-item<%= " active" if I18n.locale == :en %>">
         <%= link_to "En", { locale: :en }, class: 'nav-link' %>
