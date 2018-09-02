@@ -6,24 +6,6 @@ GIT
       rails (> 4.1, <= 6.0)
 
 GIT
-  remote: https://github.com/bernat/best_in_place.git
-  revision: 1b779e60ea912ab9c39d5c999b00c8ac44a8e535
-  specs:
-    best_in_place (3.1.1)
-      actionpack (>= 3.2)
-      railties (>= 3.2)
-
-GIT
-  remote: https://github.com/jonhue/themer.git
-  revision: d8e58647f048355a6bc8c5236b1df4a8fca3d51e
-  specs:
-    themer (1.0.0)
-      actionpack (>= 5.0)
-      activesupport (>= 5.0)
-      railties (>= 5.0)
-      sass-rails (~> 5.0)
-
-GIT
   remote: https://github.com/mbleigh/acts-as-taggable-on
   revision: 69322267029b54fe42be9a05e248df9de289a65b
   specs:
@@ -265,8 +247,6 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    rails-jquery-autocomplete (1.0.4)
-      rails (>= 3.2)
     rails_admin (1.4.1)
       builder (~> 3.1)
       coffee-rails (~> 4.0)
@@ -377,7 +357,6 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on!
   acts_as_votable
-  best_in_place!
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
@@ -401,7 +380,6 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.0)
-  rails-jquery-autocomplete
   rails_admin
   ratyrate
   russian
@@ -411,7 +389,6 @@ DEPENDENCIES
   shopify_app
   spring
   spring-watcher-listen (~> 2.0.0)
-  themer!
   trix!
   turbolinks (~> 5)
   tzinfo-data

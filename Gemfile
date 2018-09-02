@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.0'
 #My gems
-gem 'bootstrap-sass', '~> 3.3.6' #
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'devise'
 gem 'bootstrap_form'
@@ -24,13 +24,9 @@ gem 'merit'
 gem "russian"
 gem 'trix', git: 'https://github.com/bcoia/trix.git'
 gem 'acts_as_votable'
-# gem 'x-editable-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'rails_admin'
-gem 'best_in_place', github: 'bernat/best_in_place'
-gem 'rails-jquery-autocomplete'
-gem 'themer', github: 'jonhue/themer'
 
 
 # gem 'rails-jquery-autocomplete'
