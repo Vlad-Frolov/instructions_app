@@ -8,12 +8,12 @@
       <div>
       <%= link_to like_comment_path(comment), class: 'fa fa-thumbs-o-up', remote: true, method: :put do %>
         <div id='<%=comment.id%>like-count'>
-          <%= comment.get_upvotes.size %>
+          <%= comment.likes %>
         </div>
       <% end %>
       <%= link_to dislike_comment_path(comment),class: 'fa fa-thumbs-o-down', remote: true, method: :put do %>
         <div id='<%=comment.id%>dislike-count'>
-          <%= comment.get_downvotes.size %>
+          <%= comment.dislikes %>
         </div>
       <% end %>
     </div>

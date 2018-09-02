@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments.includes(:user).order('created_at')
     @steps = @post.steps.paginate(:per_page => 1, :page => params[:page])
     respond_to do |format|
       format.html 

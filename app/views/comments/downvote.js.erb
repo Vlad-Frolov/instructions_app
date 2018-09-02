@@ -1,2 +1,2 @@
-$('#<%= @comment.id %>like-count').html("<%= @comment.get_upvotes.size %>");
-$('#<%= @comment.id %>dislike-count').html("<%= @comment.get_downvotes.size %>");
+$('#<%= @comment.id %>like-count').html("<%= @comment.likes %>");
+$('#<%= @comment.id %>dislike-count').html("<%= @comment.dislikes %>");
