@@ -21,10 +21,11 @@ class Ability
         post.user == user
       end
       can :show, [User]
+      can :show, Comment
     end
 
-    if user.role == nil
-      
+    if user.role == 'banned'
+      cannot [:create], Post
     end
 
 

@@ -1,6 +1,5 @@
 class StepsController < ApplicationController
   before_action :set_step, only: [:edit, :destroy, :update]
-  skip_before_action :verify_authenticity_token
   
   def edit
   

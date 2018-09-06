@@ -7,6 +7,9 @@ ru:
     instruction: "Инструкции"
     search: 'Поиск'
     language: 'Язык'
+  root:
+    top_5_favorites: 'Топ 5 лучших'
+
   data:
     step_name: "Шаг"
 admin:

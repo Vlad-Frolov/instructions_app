@@ -38,6 +38,8 @@ header:
   instruction: "Instructions"
   search: 'Search'
   language: 'Language'
+root:
+  top_5_favorites: 'Top 5 Favorites'
 data:
   step_name: "Step"
 admin:

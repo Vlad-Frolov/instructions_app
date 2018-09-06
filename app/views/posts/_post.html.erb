@@ -4,6 +4,6 @@
     <div class="manual-img"> 
       <%= link_to image_tag post.img_url, class: 'post-img', :alt => "MyLogo"  %>
     </div>
-    <div class="badge badge-pill badge-warning tags"><%= post.category.name %></div>
+    <div class="badge badge-pill badge-warning tags"><%= post.category.try :name %></div>
   </div>
 </div>

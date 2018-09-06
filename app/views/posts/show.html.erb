@@ -20,7 +20,7 @@
       <div id="steps_list_show">
         <%= render 'steps_List_Show' %>
       </div>
-      <% if current_user %>
+      <% if current_user and can? :show, Comment %>
         <div class="input-group">
           <span class="input-group-addon"><%= t('posts.show.comment') %></span>
           <input id="input_text" data-post-id=<%= @post.id %> data-user-id=<%= current_user.id %> type="text" data-behavior="post_speaker" class="form-control">

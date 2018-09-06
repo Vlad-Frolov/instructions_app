@@ -6,7 +6,7 @@
       <strong class="posts_show_step_header"><%= t('data.step.name')%> <%= step.name =%></strong>
       <div class='row show_block'>
       <%= sanitize step.content %>
-      <%= image_tag step.img_url, class: "img-responsive card-post-img" %>
+      <%= image_tag step.img_url.gsub('https', 'http'), class: "img-responsive card-post-img" %>
     </div>
     <% end %>
 </div>

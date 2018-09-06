@@ -34,7 +34,7 @@ def seed_users
           content: Faker::Lorem.sentences[0], 
           user_id: rand(1..9), 
           category_id: 2,
-          img_url: 'https://i4.stat01.com/1/8925/89243706/afacdb/51nr97kb57l-jpg.jpg'
+          img_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO3iaWZXuJ5iizhuMBYB7r8SFpkEmr2DhMQ9-QIYELl8G1QD_I'
         )
     end
   end
