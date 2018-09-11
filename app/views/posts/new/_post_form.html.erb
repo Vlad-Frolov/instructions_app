@@ -12,6 +12,11 @@
                    class: 'form-control',
                    placeholder: 'Paste image url',
                    id: 'url_up'%>
+  <%= f.text_field :video_url, 
+                    rows: 1,
+                    class: 'form-control',
+                    placeholder: 'Paste video url',
+                    id: 'video_up' %>
   <%= f.collection_select :category_id, @categories, :id, :name, class: 'form-control' %>
   <%= f.text_field :tag_list, :class => "form-control", placeholder: "Add some tags through comma" %>
   <a class="btn btn-social-icon btn-success btn-md" id="upload_widget_opener">

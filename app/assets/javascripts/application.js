@@ -24,4 +24,5 @@
 //= require jquery.raty
 //= require ratyrate
 //= require trix
+//= require posts/video_link
 //= require_tree .
