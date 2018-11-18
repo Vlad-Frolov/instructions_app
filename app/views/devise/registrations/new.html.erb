@@ -4,35 +4,35 @@
     <h3>Sign up and share with all people!</h3>
 
     <div class="col-sm-offset-4 col-sm-4">
-      <%# <h3>Sign up <small>it's free!</small></h3> %> 
-        <%= bootstrap_form_for(resource, 
-                        :as => resource_name, 
+      <%# <h3>Sign up <small>it's free!</small></h3> %>
+        <%= bootstrap_form_for(resource,
+                        :as => resource_name,
                         :url => registration_path(resource_name)) do |f| %>
 
-        <%= f.text_field :name, 
-                  placeholder: 'username (will be shown publicly)', 
+        <%= f.text_field :name,
+                  placeholder: 'username (will be shown publicly)',
                   class: 'form-control' %>
-        <%= f.text_field :email, 
-                  placeholder: 'email', 
+        <%= f.text_field :email,
+                  placeholder: 'email',
                   class: 'form-control' %>
-        <%= f.password_field :password, 
-                            placeholder: 'password', 
+        <%= f.password_field :password,
+                            placeholder: 'password',
                             class: 'form-control' %>
-        <%= f.password_field :password_confirmation, 
-                            placeholder: 'password confirmation', 
+        <%= f.password_field :password_confirmation,
+                            placeholder: 'password confirmation',
                             class: 'form-control' %>
-        <%= f.hidden_field :image, 
+        <%= f.hidden_field :image,
                             class: 'form-control',
                             id: 'url_up' %>
-        
+
         <p><a class="btn btn-social-icon btn-success btn-md" id="upload_widget_opener">
           <i class="fa fa-picture-o steps_edit_icons"></i>
         </a></p>
         <%= f.submit 'Sign up', class: 'btn sign-up-button' %>
       <% end %>
    </div>
-  </div> 
+  </div>
 </div>
 
-<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 <script type="text/javascript" src="/assets/steps/upload_img"></script>

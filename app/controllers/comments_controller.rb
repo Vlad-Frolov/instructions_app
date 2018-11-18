@@ -1,23 +1,23 @@
 class CommentsController < ApplicationController
 
-  def upvote 
+  def upvote
     @comment = Comment.find(params[:id])
     @comment.upvote_by current_user
     update_count(@comment)
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js 
-    end 
-  end  
-      
+      format.js
+    end
+  end
+
   def downvote
     @comment = Comment.find(params[:id])
     @comment.downvote_by current_user
     update_count(@comment)
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js 
-    end 
+      format.js
+    end
   end
 
   private
@@ -27,6 +27,6 @@ class CommentsController < ApplicationController
     comment.dislikes = comment.get_downvotes.size
     comment.save
   end
-  
-  
+
+
 end

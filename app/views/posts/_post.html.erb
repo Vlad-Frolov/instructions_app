@@ -1,7 +1,7 @@
 <div class="col-sm-3 single-post-card" id=<%= post_path(post.id) %>>
   <div class="card" onclick="window.location.href='<%= post_path(post.id) %>'">
     <%= truncate(post.title, :length => 22) %>
-    <div class="manual-img"> 
+    <div class="manual-img">
       <%= link_to image_tag post.img_url, class: 'post-img', :alt => "MyLogo"  %>
     </div>
     <div class="badge badge-pill badge-warning tags"><%= post.category.try :name %></div>

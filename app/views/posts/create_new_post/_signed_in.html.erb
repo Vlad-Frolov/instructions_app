@@ -1,6 +1,6 @@
 <div class="new-post-button-parent">
-  <span>Cannot find anyone? Try to: </span>
-  <%= link_to "Create a new post", 
-              new_post_path, 
+  <span><%= t('posts.not_found') %>: </span>
+  <%= link_to t('posts.create_a_new_post'),
+              new_post_path,
               :class => "new-post-button" %>
 </div>

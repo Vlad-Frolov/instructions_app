@@ -7,8 +7,22 @@ ru:
     instruction: "Инструкции"
     search: 'Поиск'
     language: 'Язык'
+    admin_panel: 'Панель администратора'
+    logout: 'Выйти'
+    edit_profile: 'Редактировать профиль'
   root:
     top_5_favorites: 'Топ 5 лучших'
+    latest: 'Последние'
+    title: 'Заголовок'
+    updated: 'Обновлено'
+    tags: 'Тэги'
+  posts:
+    to_create_a_new_post_you_have_to: 'Для создания новой инструкции Вам необходимо'
+    create_a_new_post: 'Создать новую инструкцию'
+    tag_cloud: 'Облако тэгов'
+    login: 'Войти'
+    instructions: 'Инструкции'
+    not_found: 'Не нашли, что искали. Попробуйте'
 
   data:
     step_name: "Шаг"
@@ -161,5 +175,3 @@ admin:
         default_col_sep: ","
         col_sep: "Разделитель столбцов"
         col_sep_help: "Разделитель по умолчанию ('%{value}')" # value is default_col_sep
-
-

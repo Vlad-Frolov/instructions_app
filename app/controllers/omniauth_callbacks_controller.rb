@@ -1,7 +1,7 @@
 class OmniauthCallbacksController < ApplicationController
-  
+
   Devise::OmniauthCallbacksController
-  
+
   def facebook
     process_auth("facebook")
   end

@@ -1,7 +1,7 @@
 <div id="single-post-content" class="container">
   <div class="row" id='feed'>
     <%= render "post_main" %>
-    
+
     <div class="col-sm-3">
       <div class="posted-by">Posted by <%= link_to @post.user.name, user_path(@post.user)%></div>
       <%= rating_for @post, "original_score" %>
@@ -12,11 +12,11 @@
       <%= link_to 'Create PDF', post_path(@post, :format => :pdf), class: 'btn btn-warning' %>
       <div class="main_page_posts_header"><strong><%= t('root.Steps') %></strong></div>
       <% @post.steps.each_with_index do |step, index| %>
-        <h5 class="show_step"><a href="<%=@post.id%>?page=<%=index+1%>" class="btn btn-social-icon btn-success btn-md"><%= (index+1).to_s + ". " + step.name %></a></h5>  
+        <h5 class="show_step"><a href="<%=@post.id%>?page=<%=index+1%>" class="btn btn-social-icon btn-success btn-md"><%= (index+1).to_s + ". " + step.name %></a></h5>
       <% end %>
     </div>
 
-    <div class="col-sm-10 col-sm-offset-1">  
+    <div class="col-sm-10 col-sm-offset-1">
       <div id="steps_list_show">
         <%= render 'steps_List_Show' %>
       </div>
@@ -24,7 +24,7 @@
         <div class="input-group">
           <span class="input-group-addon"><%= t('posts.show.comment') %></span>
           <input id="input_text" data-post-id=<%= @post.id %> data-user-id=<%= current_user.id %> type="text" data-behavior="post_speaker" class="form-control">
-      
+
         </div>
 
         <div id="comments" style="margin-top:10px">

@@ -29,19 +29,6 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en: 
-header:
-  login: "Login"
-  signup: "Signup"
-  posts: "Instructions"
-  profile: "Profile"
-  instruction: "Instructions"
-  search: 'Search'
-  language: 'Language'
-root:
-  top_5_favorites: 'Top 5 Favorites'
-data:
-  step_name: "Step"
 admin:
     js:
       true: True
@@ -192,7 +179,3 @@ admin:
         default_col_sep: ","
         col_sep: "Column separator"
         col_sep_help: "Leave blank for default ('%{value}')" # value is default_col_sep
-      
- 
-
-  

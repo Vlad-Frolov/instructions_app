@@ -13,5 +13,5 @@ class PostChannel < ApplicationCable::Channel
   def channel
     "Post_Channel_#{params[:id]}"
   end
-  
+
 end

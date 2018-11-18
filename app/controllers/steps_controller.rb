@@ -1,8 +1,8 @@
 class StepsController < ApplicationController
   before_action :set_step, only: [:edit, :destroy, :update]
-  
+
   def edit
-  
+
   end
 
   def create
@@ -16,7 +16,7 @@ class StepsController < ApplicationController
         format.html { redirect_to edit_post_path(@post.id), notice: 'Step was successfully created.' }
         format.json { render :show, status: :created, location: @step }
       else
-        format.html 
+        format.html
         format.json { render json: @step.errors, status: :unprocessable_entity }
       end
     end

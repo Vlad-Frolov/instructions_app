@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '4e6e13e243f900f1b75e0c6f2bac088629489d314f918e19f43bed49f5e04abe0cd70ebd50cdbd45cb9a5f4b958bc7ad5952922862ff18bcde9d883b212f55d6'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -19,7 +19,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -285,6 +285,6 @@ Devise.setup do |config|
   config.omniauth :github, '47b5f514f3b6b70b8bee', 'c540f6fa5af812786c8622fffcf0029a37aa2b27', :scope => 'user:email', callback_url: "http://localhost:3000/users/auth/github/callback"
   config.omniauth :google_oauth2, "447084555962-qaui43lb61skpg6ncnv0b4v4dv17cumr.apps.googleusercontent.com", "Xz7Am8QmFmsgd7CkDUNeg8Ka", {}
   config.omniauth :vkontakte, "6660839", "LvDZn15f5dkjM9daUc2C"
-  
+
 
 end

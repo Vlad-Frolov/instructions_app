@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user).order('created_at')
     @steps = @post.steps.paginate(:per_page => 1, :page => params[:page])
     respond_to do |format|
-      format.html 
+      format.html
       format.json { render json: @steps }
       format.js
       format.pdf do
@@ -18,14 +18,14 @@ class PostsController < ApplicationController
       end
     end
   end
-        
+
   def index
     @posts = get_posts.includes(:category).paginate(page: params[:page])
     @categories = Category.all
     respond_to do |format|
       format.html
       format.js { render partial: 'posts/posts_pagination_page' }
-    end 
+    end
   end
 
   def edit
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
         format.json { head :no_content }
       end
     end
-  end 
+  end
 
   def get_posts
     category = params[:category]
@@ -71,7 +71,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     authorize! :create, @post
     respond_to do |format|
-      if @post.save 
+      if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else

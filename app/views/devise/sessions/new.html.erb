@@ -2,17 +2,17 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <h2 class="text-center">Log in</h2>
-        <%= bootstrap_form_for(resource, 
-                              as: resource_name, 
+        <%= bootstrap_form_for(resource,
+                              as: resource_name,
                               url: session_path(resource_name)) do |f| %>
 
-            <%= f.email_field :email, 
-                              autofocus: true, 
-                              class: 'form-control', 
+            <%= f.email_field :email,
+                              autofocus: true,
+                              class: 'form-control',
                               placeholder: 'email' %>
 
-            <%= f.password_field  :password, 
-                                  autocomplete: "off", 
+            <%= f.password_field  :password,
+                                  autocomplete: "off",
                                   class: 'form-control',
                                   placeholder: 'password' %>
 
@@ -23,18 +23,10 @@
 
           <%= f.submit "Log in", class: 'form-control login-button' %>
         <% end %>
-          <a class="btn btn-social-icon btn-lg btn-google" href="/users/auth/google_oauth2">
-            <i class="fa fa-google"></i>
-          </a>
-          <a class="btn btn-social-icon btn-lg btn-vk" href="/users/auth/vkontakte">
-            <i class="fa fa-vk"></i>
-          </a>
-          <a class="btn btn-social-icon btn-lg btn-git" href="/users/auth/github">
-            <i class="fa fa-git"></i>
-          </a>
-          <a class="btn btn-social-icon btn-lg btn-facebook" href="/users/auth/facebook">
-            <i class="fa fa-facebook"></i>
-          </a>
+          <a href="/users/auth/google_oauth2"><img src="https://image.flaticon.com/icons/svg/145/145804.svg" width="41" height="40"></a>
+          <a href="/users/auth/github"><img src="https://image.flaticon.com/icons/svg/179/179323.svg" width="41" height="40"></a>
+          <a href="/users/auth/facebook"><img src="https://image.flaticon.com/icons/svg/696/696379.svg" width="41" height="40"></a>
+          <a href="/users/auth/vkontakte"><img src="https://image.flaticon.com/icons/svg/725/725288.svg" width="41" height="40"></a>
    </div>
-  </div> 
+  </div>
 </div>

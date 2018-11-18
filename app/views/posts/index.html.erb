@@ -1,6 +1,6 @@
 <div id="branch-main-content" class="container">
   <div class="row">
-    <h1 class="page-title">Instructions</h1>
+    <h1 class="page-title"><%= t('posts.instructions') %></h1>
     <%= render 'posts/create_new_post' %>
   </div>
   <div class="row">
@@ -14,7 +14,7 @@
     </div>
   <div class="row">
     <div class="col-sm-12" id="feed">
-      <%= render @posts %>    
+      <%= render @posts %>
       <%= render no_posts_path %>
     </div>
   </div>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user
-  
+
   def show
     @posts = @user.posts.order('updated_at DESC')
     respond_to do |format|
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       format.json {render :json => @user}
     end
   end
-  
+
   def destroy
     authorize! :manage, :all
     @user.destroy
@@ -18,10 +18,10 @@ class UsersController < ApplicationController
         format.json { head :no_content }
       end
     end
-  end 
+  end
 
-  private 
-  
+  private
+
   def set_user
     @user = User.find(params[:id])
   end

@@ -6,7 +6,7 @@ class CommentBroadcastJob < ApplicationJob
   end
 
   private
-  
+
   def render_comment(comment)
     ApplicationController.renderer.render(partial: 'comments/comment', locals: {comment: comment})
   end
