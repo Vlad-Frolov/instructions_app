@@ -3,7 +3,8 @@
     <%= render "post_main" %>
 
     <div class="col-sm-3">
-      <div class="posted-by">Posted by <%= link_to @post.user.name, user_path(@post.user)%></div>
+      <div class="posted-by"><%= t('posts.posted_by') %><%= link_to @post.user.name, user_path(@post.user)%></div>
+      <%= t('posts.rating') %>
       <%= rating_for @post, "original_score" %>
       <% if can? :manage, @post %>
         <%= link_to t('posts.show.links.edit'), edit_post_path(@post.id), class: "btn btn-success" %>

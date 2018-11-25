@@ -3,7 +3,7 @@
     <%= render all_categories_button_path %>
     <% @categories.each do |category| %>
       <li class="category-item">
-        <%= link_to category.name, 
+        <%= link_to category.name,
                     send("posts_path", category: category.name),
                     :class => ("selected-item" if params[:category] == category.name) %>
       </li>
