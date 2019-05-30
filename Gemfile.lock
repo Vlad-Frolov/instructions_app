@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/bcoia/trix.git
-  revision: 56d84ae42e34488b0bb301bd9bd0f54fac7fc811
-  specs:
-    trix (0.11.1)
-      rails (> 4.1, <= 6.0)
-
-GIT
   remote: https://github.com/mbleigh/acts-as-taggable-on
   revision: 69322267029b54fe42be9a05e248df9de289a65b
   specs:
@@ -392,7 +385,6 @@ DEPENDENCIES
   shopify_app
   spring
   spring-watcher-listen (~> 2.0.0)
-  trix!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
@@ -405,4 +397,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.16.3
+   1.16.6

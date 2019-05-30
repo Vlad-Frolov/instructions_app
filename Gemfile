@@ -22,7 +22,7 @@ gem 'ratyrate'
 gem 'shopify_app'
 gem 'merit'
 gem "russian"
-gem 'trix', git: 'https://github.com/bcoia/trix.git'
+# gem 'trix', git: 'https://github.com/bcoia/trix.git'
 gem 'acts_as_votable'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
