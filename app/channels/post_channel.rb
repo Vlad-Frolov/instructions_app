@@ -1,11 +1,11 @@
 class PostChannel < ApplicationCable::Channel
-  #When a user became consumer
   def subscribed
     stream_from channel
   end
 
   def speak(data)
-    Comment.create! text: data['comment'], user_id: data['user'], post_id: data['post']
+    binding.pry
+    Comment.create! text: data['comment'], user_id: data['user'], post_id: data['post'], img_url: data['img_url']
   end
 
   private
@@ -13,5 +13,4 @@ class PostChannel < ApplicationCable::Channel
   def channel
     "Post_Channel_#{params[:id]}"
   end
-
 end

@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def upvote
     @comment = Comment.find(params[:id])
     @comment.upvote_by current_user
@@ -27,6 +26,4 @@ class CommentsController < ApplicationController
     comment.dislikes = comment.get_downvotes.size
     comment.save
   end
-
-
 end
