@@ -25,6 +25,7 @@
         <div class="input-group">
           <span class="input-group-addon"><%= t('posts.show.comment') %></span>
           <input id="input_text" data-post-id=<%= @post.id %> data-user-id=<%= current_user.id %> type="text" data-behavior="post_speaker" class="form-control">
+          <input id="video_up" type="text" name="result" value>
           <input id="url_up" type="hidden" name="result" value>
         </div>
         <p><a class="btn btn-social-icon btn-success btn-md" id="upload_widget_opener">

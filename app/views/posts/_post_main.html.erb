@@ -1,7 +1,7 @@
 <h2 class='page-title post_board'><%= @post.title %></h2>
 <div class="col-sm-8 col-sm-offset-1 post_board">
   <%= image_tag @post.img_url, class: "img-responsive card-post-img" %>
-  <a id=video href="<%= @post.video_url %>"></a>
+  <p><%= youtube_video @post.video_url %></p>
   <%=sanitize @post.content %>
   <div class="posts_show_tags">
     <% @post.tags.each do |tag| %>
@@ -9,4 +9,3 @@
     <% end %>
   </div>
 </div>
-<script type="text/javascript" src="/assets/posts/video_link.js"></script>

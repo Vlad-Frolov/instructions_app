@@ -5,7 +5,8 @@
       <div class="col-lg-10">
         <strong class = "comments_nickname"><%= link_to comment.user.name, user_url(comment.user) %></strong><br>
         <%= comment.text %>
-        <%= image_tag comment.img_url, class: "img-responsive card-post-img" %>
+        <p><%= image_tag comment.img_url, class: "img-responsive card-post-img" %></p>
+        <%= youtube_video comment.video_url %>
       <div>
       <%= link_to like_comment_path(comment), class: 'fa fa-thumbs-o-up', remote: true, method: :put do %>
         <div id='<%=comment.id%>like-count'>
@@ -20,5 +21,3 @@
     </div>
   </div>
 </div>
-
-

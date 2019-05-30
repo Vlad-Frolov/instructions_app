@@ -23,5 +23,4 @@
 //= require steps/upload_img
 //= require jquery.raty
 //= require ratyrate
-//= require posts/video_link
 //= require_tree .

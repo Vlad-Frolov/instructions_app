@@ -21,7 +21,7 @@ gem 'cloudinary'
 gem 'ratyrate'
 gem 'shopify_app'
 gem 'merit'
-gem "russian"
+# gem "russian"
 # gem 'trix', git: 'https://github.com/bcoia/trix.git'
 gem 'acts_as_votable'
 gem 'wicked_pdf'
@@ -29,6 +29,7 @@ gem 'wkhtmltopdf-binary'
 gem 'rails_admin'
 gem 'rails-jquery-autocomplete'
 gem 'pry-rails'
+gem 'ohembedr'
 
 # gem 'rails-jquery-autocomplete'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

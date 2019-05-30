@@ -11,7 +11,7 @@ jQuery ->
         $('#comments').append data['comment']
 
       speak: (comment) ->
-        @perform 'speak', comment: comment, img_url: `$('#url_up')[0].value`, post: `$('#input_text').data('postId')`, user: `$('#input_text').data('userId')`
+        @perform 'speak', comment: comment, img_url: `$('#url_up')[0].value`, video_url: `$('#video_up')[0].value`, post: `$('#input_text').data('postId')`, user: `$('#input_text').data('userId')`
 
     $(document).on 'keypress', '[data-behavior~=post_speaker]', (event) ->
       if event.keyCode is 13
@@ -19,6 +19,7 @@ jQuery ->
           App.post.speak event.target.value
           event.target.value = ''
           $('#url_up')[0].value = ''
+          $('#video_up')[0].value = ''
           event.preventDefault()
           img = $('.cloudinary-thumbnail')[0]
           if(img != "undefined")
