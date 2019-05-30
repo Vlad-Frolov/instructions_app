@@ -20,3 +20,6 @@ jQuery ->
           event.target.value = ''
           $('#url_up')[0].value = ''
           event.preventDefault()
+          img = $('.cloudinary-thumbnail')[0]
+          if(img != "undefined")
+            img.remove()

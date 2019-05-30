@@ -4,7 +4,6 @@ class PostChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    binding.pry
     Comment.create! text: data['comment'], user_id: data['user'], post_id: data['post'], img_url: data['img_url']
   end
 
